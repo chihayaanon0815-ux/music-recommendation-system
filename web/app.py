@@ -53,7 +53,9 @@ def index():
     try:
         from recommender.recommend import recommend
         algorithm = '推荐算法模块'
-    except ImportError:
+    except ModuleNotFoundError as e:
+        if e.name not in ('recommender', 'recommender.recommend'):
+            raise
         recommend = mock_recommend
         algorithm = '模拟推荐算法（待接入 B 模块）'
     results = recommend(songs, preferences, limit=10)
