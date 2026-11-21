@@ -1,0 +1,10 @@
+{
+  "notice": "虚构测试样例，仅用于接口与边界验证，不代表真实歌曲、真实用户偏好或真实推荐效果。",
+  "songs": [
+    {"song_id": "01", "song_name": "测试歌曲", "artist": "测试歌手", "genres": "流行|民谣"},
+    {"song_id": "02", "song_name": "测试歌曲二", "artist": "另一位歌手", "genres": "摇滚"},
+    {"song_id": "03", "song_name": "测试歌曲三", "artist": "测试歌手", "genres": "民谣"},
+    {"song_id": "04", "song_name": "测试歌曲四", "artist": "第三位歌手", "genres": "电子|流行"},
+    {"song_id": "05", "song_name": "测试歌曲五", "artist": "另一位歌手", "genres": ""}
+  ]
+}
