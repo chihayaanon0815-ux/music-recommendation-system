@@ -1,9 +1,30 @@
 import unittest
 import builtins
+import csv
+import tempfile
+from pathlib import Path
 from unittest.mock import patch
 from web.app import app, mock_recommend, SAMPLE
 
 class WebTests(unittest.TestCase):
+    def test_large_artist_list_and_manual_selection(self):
+        with tempfile.TemporaryDirectory() as directory:
+            base = Path(directory) / 'data' / 'processed'
+            base.mkdir(parents=True)
+            with (base / 'songs.csv').open('w', encoding='utf-8', newline='') as f:
+                writer = csv.writer(f)
+                writer.writerow(['song_id', 'song_name', 'artist', 'genres'])
+                writer.writerows((f'{i:03}', f'歌曲{i}', f'歌手{i:03}', '流行') for i in range(120))
+            with patch('web.app.ROOT', Path(directory)):
+                client = app.test_client()
+                page = client.get('/').get_data(as_text=True)
+                self.assertEqual(page.count('name="artists"'), 100)
+                self.assertNotIn('value="歌手119"', page)
+                selected = client.post('/', data={'artist_search': '歌手119'}).get_data(as_text=True)
+                self.assertIn('歌曲119', selected)
+                self.assertIn('歌手匹配', selected)
+                self.assertIn('value="歌手119"', selected)
+
     def test_missing_recommender_uses_mock(self):
         original_import = builtins.__import__
         def importing(name, *args, **kwargs):

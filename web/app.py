@@ -49,7 +49,9 @@ def index():
         messages.append(f'歌曲文件缺失或损坏（{e}），当前使用虚构演示样例。')
     genres = sorted({g.strip() for s in songs for g in s['genres'].split('|') if g.strip()})
     artists = sorted({s['artist'] for s in songs if s['artist']})
-    preferences = {'genres': [x for x in request.form.getlist('genres') if x in genres], 'artists': [x for x in request.form.getlist('artists') if x in artists]}
+    artist_set = set(artists)
+    selected_artists = request.form.getlist('artists') + [request.form.get('artist_search', '').strip()]
+    preferences = {'genres': [x for x in request.form.getlist('genres') if x in genres], 'artists': list(dict.fromkeys(x for x in selected_artists if x in artist_set))}
     try:
         from recommender.recommend import recommend
         algorithm = '推荐算法模块'
@@ -71,4 +73,5 @@ def index():
         counts = sorted(Counter(g.strip() for s in songs for g in set(s['genres'].split('|')) if g.strip()).items())
         messages.append('风格统计为虚构演示样例的统计；真实风格统计尚未加载。')
     artist_counts = sorted(Counter(s['artist'] for s in songs if s['artist']).items(), key=lambda x: (-x[1], x[0]))
-    return render_template('index.html', songs=songs, source=source, messages=messages, genres=genres, artists=artists, p=preferences, results=results, counts=counts, artist_counts=artist_counts, algorithm=algorithm)
+    featured_artists = list(dict.fromkeys([a for a, _ in artist_counts[:100]] + preferences['artists']))
+    return render_template('index.html', songs=songs, source=source, messages=messages, genres=genres, artists=featured_artists, p=preferences, results=results, counts=counts, artist_counts=artist_counts[:15], algorithm=algorithm)
