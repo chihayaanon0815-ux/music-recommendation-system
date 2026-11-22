@@ -7,6 +7,13 @@ from unittest.mock import patch
 from web.app import app, mock_recommend, SAMPLE
 
 class WebTests(unittest.TestCase):
+    def test_unknown_artist_does_not_show_default_recommendations(self):
+        response = app.test_client().post('/', data={'artist_search': '不存在的歌手'})
+        page = response.get_data(as_text=True)
+        self.assertIn('没有匹配歌曲', page)
+        self.assertIn('不存在的歌手', page)
+        self.assertNotIn('未选择偏好，按歌曲 ID 默认推荐', page)
+
     def test_large_artist_list_and_manual_selection(self):
         with tempfile.TemporaryDirectory() as directory:
             base = Path(directory) / 'data' / 'processed'
