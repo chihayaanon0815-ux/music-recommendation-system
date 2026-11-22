@@ -2,6 +2,12 @@
 
 三人一周课程设计：离线 Windows 本地网页，PySpark 离线清洗，Flask 展示基于偏好的推荐和统计图。音频播放不在必做范围。
 
+## 歌单功能
+
+在首页创建歌单，搜索添加歌曲或导入 UTF-8 CSV。歌单详情页会统计歌曲风格和歌手，并按指定的 1–100 首生成新的推荐歌单。普通搜索优先查询本地曲库，本地无匹配时联网查询 MusicBrainz，也可以点击「搜索 MusicBrainz」查找其他版本。
+
+运行、打包和本地存储说明见 [歌单版使用说明](歌单版使用说明.txt)。
+
 ## 并行协作
 - 数据：feature/data-processing，负责 data_processing/、data/sample/、docs/data/
 - 算法：feature/recommendation，负责 recommender/、tests/recommender/

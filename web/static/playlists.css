@@ -1,0 +1,11 @@
+.library nav { margin: 1.25rem 0; }
+.library nav a, .library article a { margin-left: 0; }
+.library .panel + .panel, .library .layout + .panel { margin-top: 1.25rem; }
+.library .layout .panel { margin-top: 0; }
+.library .controls { display: flex; flex-wrap: wrap; align-items: end; gap: .7rem; }
+.library .controls label { display: flex; flex-direction: column; gap: .35rem; max-width: 100%; }
+.library input { max-width: 100%; padding: .4rem; }
+.library .row-action { margin-left: auto; }
+.library .quiet { background: #f1f5f1; }
+.library .profile { padding-left: 1.25rem; }
+.library .reason { color: #356a58; }

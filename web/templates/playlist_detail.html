@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ playlist.name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='playlists.css') }}">
+</head>
+<body><main class="library">
+  {% macro song_results(results) %}
+    {% for song in results %}
+      <article>
+        <div><strong>{{ song.song_name }}</strong>
+          <p>{{ song.artist or '未知歌手' }} · {{ song.genres or '暂无风格' }}</p>
+          {% if song.version %}<p>版本：{{ song.version }}</p>{% endif %}
+          {% if song.release %}<p>收录于《{{ song.release }}》</p>{% endif %}
+        </div>
+        <form class="row-action" method="post" action="{{ url_for('playlists.add', playlist_id=playlist.id) }}">
+          <input type="hidden" name="csrf" value="{{ session.playlist_csrf }}">
+          <input type="hidden" name="song_id" value="{{ song.song_id }}">
+          <button>添加</button>
+        </form>
+      </article>
+    {% endfor %}
+  {% endmacro %}
+  <header>
+    <h1>{{ playlist.name }}</h1>
+    {% if playlist.requested %}
+      <p>请求 {{ playlist.requested }} 首 · 当前 {{ songs|length }} 首</p>
+    {% else %}<p>{{ songs|length }} 首 · {{ tagged }} 首有风格标签</p>{% endif %}
+  </header>
+  <nav><a href="{{ url_for('playlists.index') }}">返回我的歌单</a></nav>
+  {% for message in get_flashed_messages() %}<p class="notice" role="status">{{ message }}</p>{% endfor %}
+  <div class="layout">
+    <section class="panel">
+      <h2>添加歌曲</h2>
+      <form method="get" class="controls">
+        <label>歌曲或歌手 <input name="q" value="{{ query }}" maxlength="100" required></label>
+        <button>搜索</button>
+        <button class="quiet" name="search_online" value="1">搜索 MusicBrainz</button>
+      </form>
+      {% if lookup_state %}<p class="muted" role="status">{{ lookup_state }}</p>{% endif %}
+      {{ song_results(candidates) }}
+      {% if online_state %}<p class="muted" role="status">{{ online_state }}</p>{% endif %}
+      {{ song_results(online_candidates) }}
+      <h3>导入 CSV</h3>
+      <p class="muted">UTF-8 文件需包含 song_name 和 artist 两列，可另含 song_id。</p>
+      <form class="controls" method="post" enctype="multipart/form-data" action="{{ url_for('playlists.import_csv', playlist_id=playlist.id) }}">
+        <input type="hidden" name="csrf" value="{{ session.playlist_csrf }}">
+        <label>CSV 文件 <input name="playlist" type="file" accept=".csv,text/csv" required></label>
+        <button>导入歌曲</button>
+      </form>
+    </section>
+    <section class="panel">
+      <h2>歌单画像</h2>
+      <p>风格分析覆盖 {{ tagged }} / {{ songs|length }} 首歌曲。</p>
+      {% if genres %}<ul class="profile">{% for tag, n in genres %}<li>{{ tag }} · {{ n }} 首</li>{% endfor %}</ul>{% else %}<p class="muted">暂无可统计的风格。</p>{% endif %}
+      {% if artists %}<p class="muted">常见歌手：{% for artist, n in artists %}{{ artist }}（{{ n }} 首）{% if not loop.last %}、{% endif %}{% endfor %}</p>{% endif %}
+      <form class="controls" method="post" action="{{ url_for('playlists.generate', playlist_id=playlist.id) }}">
+        <input type="hidden" name="csrf" value="{{ session.playlist_csrf }}">
+        <label>推荐首数 <input name="limit" type="number" value="10" min="1" max="100" required></label>
+        <button>生成推荐歌单</button>
+      </form>
+    </section>
+  </div>
+  <section class="panel">
+    <h2>歌单歌曲</h2>
+    {% for song in songs %}
+      <article><div><strong>{{ song.song_name }}</strong>
+        <p>{{ song.artist or '未知歌手' }} · {{ song.genres or '暂无风格' }}{% if not song.matched %} · 待匹配{% endif %}</p>
+        {% if song.reason %}<p class="reason">{{ song.reason }} · {{ song.score }} 分</p>{% endif %}
+      </div>
+      <form class="row-action" method="post" action="{{ url_for('playlists.remove', playlist_id=playlist.id, item_id=song.id) }}">
+        <input type="hidden" name="csrf" value="{{ session.playlist_csrf }}">
+        <button class="quiet">移除</button>
+      </form></article>
+    {% else %}<p class="muted">添加歌曲后，这里会显示歌单内容。</p>{% endfor %}
+  </section>
+</main></body>
+</html>

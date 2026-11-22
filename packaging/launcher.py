@@ -1,4 +1,4 @@
-import socket
+import os
 import sys
 import threading
 import webbrowser
@@ -6,14 +6,20 @@ from pathlib import Path
 
 if not getattr(sys, 'frozen', False):
     sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
-from werkzeug.serving import make_server
+from werkzeug.serving import BaseWSGIServer
 from web.app import app
+
+
+class LocalServer(BaseWSGIServer):
+    # Windows can otherwise let two launchers bind the same address.
+    allow_reuse_address = False
+
 
 def main():
     server = None
     for port in range(5000, 5021):
         try:
-            server = make_server('127.0.0.1', port, app)
+            server = LocalServer('127.0.0.1', port, app)
             break
         except (OSError, SystemExit):
             continue
@@ -23,7 +29,8 @@ def main():
         return
     url = f'http://127.0.0.1:{port}/'
     print(f'服务地址：{url}\n关闭此窗口或按 Ctrl+C 退出。')
-    threading.Timer(0.8, lambda: webbrowser.open(url)).start()
+    if os.environ.get('MUSICRECO_NO_BROWSER') != '1':
+        threading.Timer(0.8, lambda: webbrowser.open(url)).start()
     try:
         server.serve_forever()
     except KeyboardInterrupt:

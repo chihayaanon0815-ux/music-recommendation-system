@@ -1,0 +1,18 @@
+音乐推荐系统 · 歌单版
+
+完整解压，双击 MusicRecommendation-Playlists.exe，浏览器会自动打开。
+首页创建歌单，进入后搜索歌曲并添加，也可以上传 UTF-8 CSV。
+CSV 表头为 song_name,artist，也可以额外提供 song_id。无法唯一匹配的歌曲保留为待匹配。
+在歌单详情页输入 1～100 首并生成推荐，新歌单会自动保存。
+推荐排除原歌单歌曲，候选不足时显示实际数量。未标注风格的已匹配歌曲可以贡献歌手偏好。
+
+首次搜索会导入预置曲库，可能需要几秒。普通搜索优先使用本地结果，本地查不到时查询 MusicBrainz。
+如果本地命中了同名歌曲，但缺少想要的歌手或版本，点击「搜索 MusicBrainz」查看在线候选。
+本地歌单、预置曲库索引和已确认的在线歌曲保存在
+%LOCALAPPDATA%\MusicRecommendation\catalog.sqlite3。
+程序需要保持整个目录结构，特别是 _internal 和 data/processed。
+关闭服务窗口可退出。已有预置曲库的来源与许可边界见原项目说明。
+
+开发：将原来的 data/processed/songs.csv、genre_counts.csv 置于源码根目录。
+安装 packaging/requirements.txt 后，运行 python packaging/launcher.py。
+使用 packaging/build.bat 重建 Windows 程序，再把上述两个 CSV 复制到输出目录的 data/processed。

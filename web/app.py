@@ -3,10 +3,12 @@ import sys
 from collections import Counter
 from pathlib import Path
 from flask import Flask, render_template, request
+from web.playlists import csrf_token, register as register_playlists
 
 ROOT = Path(sys.executable).resolve().parent if getattr(sys, 'frozen', False) else Path(__file__).resolve().parent.parent
 ASSETS = Path(getattr(sys, '_MEIPASS', ROOT)) / 'web'
 app = Flask(__name__, template_folder=str(ASSETS / 'templates'), static_folder=str(ASSETS / 'static'))
+register_playlists(app, ROOT, ASSETS)
 SAMPLE = [dict(song_id=f'{i:02}', song_name=n, artist=a, genres=g) for i, n, a, g in [
     (1, '晨光', '示例歌手甲', '流行|民谣'), (2, '远方', '示例歌手乙', '摇滚'),
     (3, '小路', '示例歌手甲', '民谣'), (4, '夜空', '示例歌手丙', '电子|流行'),
@@ -35,6 +37,7 @@ def mock_recommend(songs, preferences, limit=10):
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    csrf_token()
     base = ROOT / 'data' / 'processed'
     messages = []
     try:

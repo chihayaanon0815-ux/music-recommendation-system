@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>我的歌单</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='playlists.css') }}">
+</head>
+<body><main class="library">
+  <header><h1>我的歌单</h1><p>添加你喜欢的歌曲，用它们生成一份新的推荐歌单。</p></header>
+  <nav><a href="{{ url_for('index') }}">按风格和歌手推荐</a></nav>
+  {% for message in get_flashed_messages() %}<p class="notice" role="status">{{ message }}</p>{% endfor %}
+  <section class="panel">
+    <h2>创建歌单</h2>
+    <form method="post" class="controls">
+      <input type="hidden" name="csrf" value="{{ session.playlist_csrf }}">
+      <label>歌单名称 <input name="name" maxlength="80" required></label>
+      <button>创建歌单</button>
+    </form>
+  </section>
+  <section class="panel">
+    <h2>已保存的歌单</h2>
+    {% for playlist in playlists %}
+      <article><a href="{{ url_for('playlists.detail', playlist_id=playlist.id) }}">{{ playlist.name }}</a><span>{{ playlist.song_count }} 首</span></article>
+    {% else %}<p class="muted">还没有歌单。</p>{% endfor %}
+  </section>
+</main></body>
+</html>
