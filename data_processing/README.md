@@ -17,8 +17,8 @@
 
 产物与文档：
 
-- **仓库不提交数据**：`data/processed/*.csv` 与 `data/raw/*` 均被 `data/.gitignore` 忽略，由 `build_dataset.py` 本地生成；
-- `data/processed/songs.csv`：89,740 首真实曲目（4 列契约），约 6.4 MB，UTF-8 无 BOM、LF 行尾（生成后）；
+- **成品数据已提交**（项目负责人 2026-11-22 决定，供 B/C 联调）：`data/processed/*.csv` 与 `run_metrics.json`；再分发权限未确认，见 `docs/data/sources_and_licenses.md`；
+- `data/processed/songs.csv`：89,740 首真实曲目（4 列契约），约 6.4 MB，UTF-8 无 BOM、LF 行尾；
 - `data/processed/genre_counts.csv`：31 个中文大类计数；
 - `data/processed/run_metrics.json`：本次运行的行数与去重指标；
 - `data/sample/songs_sample.csv`：**虚构**测试样例（8 行），供 B、C 并行开发；
@@ -33,14 +33,14 @@
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r data_processing/requirements.txt
 
-# 1) 一条命令生成数据（下载 + 清洗 + 校验，约 1–3 分钟）
+# 1) 成品数据已在仓库 data/processed/，可直接校验（不需要 Spark）
+.\.venv\Scripts\python.exe data_processing/validate_outputs.py
+
+# 2) 如需从头复现：下载 + 清洗 + 校验（约 1–3 分钟）
 .\.venv\Scripts\python.exe data_processing/build_dataset.py
 
-# 2) 测试
+# 3) 测试
 .\.venv\Scripts\python.exe -m unittest discover -s data_processing/tests -v
-
-# 3) 成品契约校验（几秒，不需要 Spark）
-.\.venv\Scripts\python.exe data_processing/validate_outputs.py
 ```
 
 ## 边界

@@ -1,7 +1,8 @@
 # 数据组复现说明
 
-> **仓库不含数据文件。** 克隆后需先运行 `python data_processing/build_dataset.py` 在本地生成
-> `data/processed/songs.csv` 等文件（约 1–3 分钟，首次需联网）；生成结果不提交 Git。
+> 仓库已提交 `data/processed/` 成品（负责人 2026-11-22 决定，供 B/C 联调），可直接使用；
+> 如需从头复现或核对版本，运行 `python data_processing/build_dataset.py`（约 1–3 分钟，首次需联网）。
+> 再分发权限尚未确认，见 `docs/data/sources_and_licenses.md`。
 
 环境：Windows 11 x64；Java 17（Temurin 17.0.19）；Python 3.12；PySpark 4.0.1（本地模式 `local[*]`）。
 所有命令在仓库根目录执行。

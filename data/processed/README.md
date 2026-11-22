@@ -1,29 +1,33 @@
-# data/processed（本目录的 CSV 不在仓库里）
+# data/processed
 
-仓库**不提交** Spotify 衍生数据（许可链说明见 `docs/data/sources_and_licenses.md`）。
-本目录只保留这份说明；`songs.csv`、`genre_counts.csv`、`run_metrics.json` 由脚本在本地生成，并被 `data/.gitignore` 忽略。
-
-## 生成方式
-
-```powershell
-python data_processing/build_dataset.py
-```
-
-- 首次运行：联网下载 19.2 MB 原始 CSV → 字段映射 → PySpark 清洗 → 契约校验，约 1–3 分钟；
-- 已有 `data/raw/spotify_tracks_raw.csv` 时：`python data_processing/build_dataset.py --reuse-raw`（可离线）；
-- 已有 Kaggle 下载的 `dataset.csv` 时：`python data_processing/build_dataset.py --from-file D:\path\to\dataset.csv`。
-
-## 生成后的契约
+本目录包含角色 A 用 PySpark 清洗生成的成品数据，供 B、C 直接拉取联调（项目负责人 2026-11-22 决定提交）。
 
 | 文件 | 内容 |
 | --- | --- |
-| `songs.csv` | 89,740 首，表头 `song_id,song_name,artist,genres`，UTF-8 无 BOM、LF |
+| `songs.csv` | 89,740 首，表头 `song_id,song_name,artist,genres`，UTF-8 无 BOM、LF，约 6.4 MB |
 | `genre_counts.csv` | 31 个中文大类计数，表头 `genre,count` |
 | `run_metrics.json` | 输入/输出/去重行数 |
 
-生成后可用 `python data_processing/validate_outputs.py` 复核。
+## 校验
 
-## 为什么不提交
+```powershell
+python data_processing/validate_outputs.py
+```
 
-数据集原始内容涉及版权与 Spotify API 条款，许可标注存在冲突（ODbL 数据库 + 内容版权归原作者；HuggingFace 另标 BSD）。
-为避免在公开仓库再分发，只提交生成脚本与虚构样例（`data/sample/`）。
+预期：89,740 首、唯一 ID 89,740、31 个大类、合计 110,166 次标签计数、校验通过。
+
+## 来源、许可与再分发状态
+
+- 来源：Spotify Tracks Dataset（Kaggle/HuggingFace 公开再分发），底层由作者经 Spotify Web API 采集；
+- 许可：Kaggle 标注 ODbL（数据库）+ 内容版权归原作者，HuggingFace 另标 BSD，两者冲突；
+- **再分发权限尚未确认**：本次提交是项目负责人为组内联调作出的决定，不代表已取得公开发布授权；如后续需要公开传播或按更严格要求处理，应移除本目录数据并改为本地生成。
+
+详见 `docs/data/sources_and_licenses.md`。
+
+## 重新生成
+
+```powershell
+python data_processing/build_dataset.py --from-file <dataset.csv>
+```
+
+生成结果与当前提交一致（SHA-256 `c36ad601f429bc2852f86137b50d705f7dc5f2f32e176969cc871770e866f358`），可用 `validate_outputs.py` 复核。

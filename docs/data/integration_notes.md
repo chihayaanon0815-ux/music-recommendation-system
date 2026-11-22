@@ -2,14 +2,11 @@
 
 本文件补充 `docs/data/data_dictionary.md`，只讲“接入时要注意什么”。数据契约仍以仓库 README 为准。
 
-## 0. 先本地生成数据（仓库不含数据文件）
+## 0. 数据已随仓库提供
 
-```powershell
-python data_processing/build_dataset.py
-```
-
-首次运行约 1–3 分钟（下载 19.2 MB + PySpark 清洗），生成 `data/processed/songs.csv` 等文件；这些文件不提交 Git。
-之后可 `--reuse-raw` 离线重跑。C 打包前务必先执行一次，否则程序目录里没有数据。
+`data/processed/songs.csv`（89,740 首）、`genre_counts.csv`（31 类）、`run_metrics.json` 已提交，
+clone 后直接用即可；需要重新生成时再运行 `python data_processing/build_dataset.py`。
+提交原因为项目负责人 2026-11-22 的联调决定，再分发权限仍未确认，详见 `sources_and_licenses.md`。
 
 ## 1. 契约速查
 

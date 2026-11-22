@@ -1,8 +1,8 @@
 # 数据字典与清洗规则
 
-> **数据文件不在仓库里。** 出于再分发许可考虑，`data/processed/*.csv` 由使用者本地生成
-> （`python data_processing/build_dataset.py`），并被 `data/.gitignore` 忽略；
-> 仓库只保留脚本、虚构样例和文档。生成后的字段、规则与统计口径见下文。
+> **数据文件已提交到本仓库**（项目负责人 2026-11-22 决定，用于组内联调）：`data/processed/songs.csv`、
+> `genre_counts.csv`、`run_metrics.json`。再分发权限尚未确认，说明见 `docs/data/sources_and_licenses.md`。
+> 也可用 `python data_processing/build_dataset.py` 在本地重新生成并比对 SHA-256。
 
 数据来源与许可见 `docs/data/sources_and_licenses.md`。本文件只描述成品文件与清洗规则。
 
