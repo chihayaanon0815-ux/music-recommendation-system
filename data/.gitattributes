@@ -1,0 +1,3 @@
+# 数据文件统一以 LF 检出，避免 Windows 的 core.autocrlf 把 CSV 变成 CRLF。
+*.csv text eol=lf
+*.json text eol=lf

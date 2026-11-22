@@ -1,0 +1,9 @@
+{
+  "input": "D:\\DSH-Work\\music-recommendation-system\\data\\raw\\spotify_tracks_raw.csv",
+  "input_rows": 114000,
+  "songs_rows": 89740,
+  "dropped_blank_id_or_name": 1,
+  "duplicate_song_id_rows": 24259,
+  "genre_rows": 31,
+  "total_genre_assignments": 110166
+}
