@@ -25,5 +25,66 @@
       <article><a href="{{ url_for('playlists.detail', playlist_id=playlist.id) }}">{{ playlist.name }}</a><span>{{ playlist.song_count }} 首</span></article>
     {% else %}<p class="muted">还没有歌单。</p>{% endfor %}
   </section>
-</main></body>
+</main>
+<script>
+(function () {
+  function norm(s) { return (s || '').trim().replace(/\s+/g, ' ').toLowerCase(); }
+  function collectNames(root) {
+    var out = [];
+    Array.prototype.forEach.call(root.querySelectorAll('a[href^="/playlists/"]'), function (a) {
+      var href = a.getAttribute('href') || '';
+      if (!/^\/playlists\/\d+/.test(href)) return;
+      var name = norm(a.textContent);
+      if (name) out.push(name);
+    });
+    return out;
+  }
+  var known = collectNames(document);
+  function showError(form, msg) {
+    var box = form.querySelector('.dup-error');
+    if (!box) {
+      box = document.createElement('p');
+      box.className = 'dup-error';
+      box.style.color = '#b00020';
+      box.style.margin = '6px 0';
+      box.style.fontSize = '13px';
+      form.appendChild(box);
+    }
+    box.textContent = msg;
+  }
+  function clearError(form) {
+    var box = form.querySelector('.dup-error');
+    if (box) box.remove();
+  }
+  function bind(form) {
+    var input = form.querySelector('input[name="name"]');
+    if (!input) return;
+    input.addEventListener('input', function () { clearError(form); });
+    form.addEventListener('submit', function (ev) {
+      var value = norm(input.value);
+      if (!value) return;
+      function reject() {
+        ev.preventDefault();
+        showError(form, '歌单名称「' + input.value.trim() + '」已存在，请换一个名字。');
+        input.focus();
+      }
+      if (known.length) {
+        if (known.indexOf(value) >= 0) reject();
+        return;
+      }
+      ev.preventDefault();
+      fetch('/playlists/', { credentials: 'same-origin' })
+        .then(function (r) { return r.text(); })
+        .then(function (text) {
+          known = collectNames(new DOMParser().parseFromString(text, 'text/html'));
+          if (known.indexOf(value) >= 0) reject();
+          else form.submit();
+        })
+        .catch(function () { form.submit(); });
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('form'), bind);
+})();
+</script>
+</body>
 </html>
