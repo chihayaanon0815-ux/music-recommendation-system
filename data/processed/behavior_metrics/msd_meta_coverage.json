@@ -1,0 +1,46 @@
+{
+  "msd_songs": 384546,
+  "total_plays": 138680243,
+  "title_present": {
+    "count": 384542,
+    "pct": 100.0
+  },
+  "artist_present": {
+    "count": 384546,
+    "pct": 100.0
+  },
+  "release_present": {
+    "count": 384546,
+    "pct": 100.0
+  },
+  "year_present": {
+    "count": 263609,
+    "pct": 68.55
+  },
+  "duration_present": {
+    "count": 384546,
+    "pct": 100.0
+  },
+  "played_pct_covered_by_title": 100.0,
+  "kcore": {
+    "songs": 91283,
+    "title_present": 91283,
+    "title_pct": 100.0,
+    "spotify_genres_present": 4441,
+    "spotify_genres_pct": 4.87,
+    "kcore_interactions": 39326348,
+    "kcore_plays_total": 111745239
+  },
+  "song_pool": {
+    "songs": 5000,
+    "title_present": 5000,
+    "spotify_genres_present": 932
+  },
+  "before": {
+    "kcore_named_from_spotify_map": 4441,
+    "kcore_named_pct": 4.87,
+    "spotify_map_songs": 7678,
+    "spotify_map_play_coverage_pct": 14.26
+  },
+  "elapsed_seconds": 81.3
+}

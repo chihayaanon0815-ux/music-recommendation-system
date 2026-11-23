@@ -1,0 +1,32 @@
+{
+  "songs": {
+    "total": 91283,
+    "before": 4441,
+    "before_pct": 4.87,
+    "after_pct": 100.0
+  },
+  "interactions": {
+    "total": 39326348,
+    "before": 5706667,
+    "before_pct": 14.51,
+    "after_pct": 100.0
+  },
+  "plays": {
+    "total": 111745239,
+    "before": 16950965,
+    "before_pct": 15.17,
+    "after_pct": 100.0
+  },
+  "users": {
+    "total": 624984,
+    "before": 599375,
+    "before_pct": 95.9,
+    "after_pct": 100.0
+  },
+  "pool": {
+    "total": 5000,
+    "before": 932,
+    "before_pct": 18.64,
+    "after_pct": 100.0
+  }
+}

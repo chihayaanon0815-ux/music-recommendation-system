@@ -1,0 +1,11 @@
+.venv/
+.spark-tmp/
+__pycache__/
+*.pyc
+
+# 本地数据（不入库）：行为数据逐条产物、原始数据、Parquet
+data/behavior/
+data_processing/behavior/*.csv
+data_processing/behavior/*.jsonl
+data_processing/behavior/*.npy
+*.parquet

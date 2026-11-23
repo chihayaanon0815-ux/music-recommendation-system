@@ -1,0 +1,67 @@
+{
+  "behavior_songs": 384546,
+  "tracks_matched_in_h5": 384546,
+  "track_coverage_pct": 100.0,
+  "alignment_mismatches": 0,
+  "unusable_fields": {
+    "danceability": "源文件 1,000,000 行全为 0，未导出",
+    "energy": "源文件 1,000,000 行全为 0，未导出"
+  },
+  "audio_features": {
+    "tempo": {
+      "non_null": 384546,
+      "min": 0.0,
+      "median": 122.6,
+      "max": 285.157
+    },
+    "loudness": {
+      "non_null": 384546,
+      "min": -54.477,
+      "median": -8.237,
+      "max": 4.15
+    },
+    "key": {
+      "non_null": 384546,
+      "min": 0.0,
+      "median": 5.0,
+      "max": 11.0
+    },
+    "mode": {
+      "non_null": 384546,
+      "min": 0.0,
+      "median": 1.0,
+      "max": 1.0
+    },
+    "time_signature": {
+      "non_null": 384546,
+      "min": 0.0,
+      "median": 4.0,
+      "max": 7.0
+    },
+    "song_hotttnesss": {
+      "non_null": 309070,
+      "min": 0.0,
+      "median": 0.487,
+      "max": 1.0
+    },
+    "artist_familiarity": {
+      "non_null": 384534,
+      "min": 0.0,
+      "median": 0.608,
+      "max": 1.0
+    },
+    "artist_hotttnesss": {
+      "non_null": 384546,
+      "min": 0.0,
+      "median": 0.418,
+      "max": 1.083
+    }
+  },
+  "year_from_mb": {
+    "non_empty": 263609,
+    "pct": 68.55
+  },
+  "artist_location_non_empty": 213607,
+  "artist_mbid_non_empty": 373389,
+  "source": "msd_summary_file.h5 (Echo Nest analysis/metadata/musicbrainz, 1,000,000 rows)"
+}

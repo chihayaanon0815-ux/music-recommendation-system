@@ -1,0 +1,12 @@
+{
+  "source": "Apple iTunes Search API",
+  "target_songs": 150,
+  "matched_tracks": 134,
+  "match_rate_pct": 89.33,
+  "with_genre": 123,
+  "genre_coverage_pct": 82.0,
+  "api_requests": 150,
+  "elapsed_seconds": 452.2,
+  "rate_limit_seconds": 2.5,
+  "note": "只做单条查询；按歌名+歌手相似度校验，避免错配；流派按 iTunes 主流派映射到项目 31 类。"
+}

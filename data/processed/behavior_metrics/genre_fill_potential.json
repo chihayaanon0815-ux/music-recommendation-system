@@ -1,0 +1,131 @@
+{
+  "note": "用 artist_term.db 的艺术家标签推曲目风格的上限测算：能覆盖但标签宽泛（平均 7+ 类/首，摇滚/流行等通用标签占比极高），只能作为'艺术家标签口径' 的补充，不能替代逐曲风格标注。",
+  "kcore": {
+    "label": "k-core",
+    "songs": 91283,
+    "artist_present": 91283,
+    "artist_has_any_tag": 91177,
+    "artist_tag_pct": 99.88,
+    "exact_map_songs": 91087,
+    "exact_map_pct": 99.79,
+    "normalized_map_songs": 91089,
+    "normalized_map_pct": 99.79,
+    "avg_classes_when_mapped": 7.13,
+    "top_classes_share_pct": [
+      {
+        "group": "摇滚",
+        "songs": 81942,
+        "share_pct": 89.96
+      },
+      {
+        "group": "流行",
+        "songs": 67435,
+        "share_pct": 74.03
+      },
+      {
+        "group": "电子",
+        "songs": 50249,
+        "share_pct": 55.16
+      },
+      {
+        "group": "轻音乐",
+        "songs": 49659,
+        "share_pct": 54.52
+      },
+      {
+        "group": "民谣",
+        "songs": 47333,
+        "share_pct": 51.96
+      },
+      {
+        "group": "朋克",
+        "songs": 36517,
+        "share_pct": 40.09
+      },
+      {
+        "group": "嘻哈",
+        "songs": 33425,
+        "share_pct": 36.69
+      },
+      {
+        "group": "爵士",
+        "songs": 30575,
+        "share_pct": 33.57
+      },
+      {
+        "group": "金属",
+        "songs": 28063,
+        "share_pct": 30.81
+      },
+      {
+        "group": "节奏布鲁斯",
+        "songs": 26518,
+        "share_pct": 29.11
+      }
+    ]
+  },
+  "pool": {
+    "label": "song_pool",
+    "songs": 5000,
+    "artist_present": 5000,
+    "artist_has_any_tag": 4996,
+    "artist_tag_pct": 99.92,
+    "exact_map_songs": 4989,
+    "exact_map_pct": 99.78,
+    "normalized_map_songs": 4989,
+    "normalized_map_pct": 99.78,
+    "avg_classes_when_mapped": 7.04,
+    "top_classes_share_pct": [
+      {
+        "group": "摇滚",
+        "songs": 4599,
+        "share_pct": 92.18
+      },
+      {
+        "group": "流行",
+        "songs": 4325,
+        "share_pct": 86.69
+      },
+      {
+        "group": "轻音乐",
+        "songs": 3164,
+        "share_pct": 63.42
+      },
+      {
+        "group": "民谣",
+        "songs": 2582,
+        "share_pct": 51.75
+      },
+      {
+        "group": "电子",
+        "songs": 2386,
+        "share_pct": 47.83
+      },
+      {
+        "group": "朋克",
+        "songs": 1966,
+        "share_pct": 39.41
+      },
+      {
+        "group": "影视",
+        "songs": 1766,
+        "share_pct": 35.4
+      },
+      {
+        "group": "嘻哈",
+        "songs": 1689,
+        "share_pct": 33.85
+      },
+      {
+        "group": "灵魂乐",
+        "songs": 1666,
+        "share_pct": 33.39
+      },
+      {
+        "group": "爵士",
+        "songs": 1495,
+        "share_pct": 29.97
+      }
+    ]
+  }
+}
