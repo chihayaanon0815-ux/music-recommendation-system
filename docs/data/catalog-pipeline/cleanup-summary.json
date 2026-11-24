@@ -1,0 +1,13 @@
+{
+  "input_rows": 312686,
+  "output_rows": 293864,
+  "removed_invalid_rows": 0,
+  "merged_rows": 18822,
+  "raw_label_spellings": 640,
+  "normalized_label_spellings": 482,
+  "labels_needing_semantic_review": 405,
+  "unique_labels_needing_semantic_review": 380,
+  "rows_with_labels": 271341,
+  "rows_without_labels": 22523,
+  "scope": "清洗草稿，合并来源标签后仍需核对标签冲突、身份及版本归并"
+}

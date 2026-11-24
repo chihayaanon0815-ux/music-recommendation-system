@@ -1,0 +1,286 @@
+{
+  "sample_gds": {
+    "metadata": {
+      "schema": "1",
+      "source_sha256": "f7b1eb07b415731a568e6ebdb17e687e74203559710804f3452aec4fa7bcabd1",
+      "backend": "Neo4j GDS 2.13.12",
+      "song_count": "40000"
+    },
+    "full_catalog_count": 293864,
+    "scenarios": [
+      {
+        "scenario": "华语流行",
+        "median_seconds": {
+          "classic": 1.2943,
+          "graph": 0.0197
+        },
+        "top10_overlap": 0,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 3,
+            "graph_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 10,
+            "graph_paths": 10
+          }
+        }
+      },
+      {
+        "scenario": "摇滚",
+        "median_seconds": {
+          "classic": 1.2919,
+          "graph": 0.0209
+        },
+        "top10_overlap": 0,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 2,
+            "graph_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 10,
+            "graph_paths": 10
+          }
+        }
+      },
+      {
+        "scenario": "爵士",
+        "median_seconds": {
+          "classic": 1.223,
+          "graph": 0.0126
+        },
+        "top10_overlap": 0,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 2,
+            "graph_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 9,
+            "graph_paths": 10
+          }
+        }
+      }
+    ]
+  },
+  "first_full": {
+    "metadata": {
+      "schema": "1",
+      "source_sha256": "f7b1eb07b415731a568e6ebdb17e687e74203559710804f3452aec4fa7bcabd1",
+      "backend": "Neo4j GDS 2.13.12",
+      "song_count": "293864"
+    },
+    "full_catalog_count": 293864,
+    "scenarios": [
+      {
+        "scenario": "华语流行",
+        "median_seconds": {
+          "classic": 1.541,
+          "graph": 0.0272
+        },
+        "top10_overlap": 0,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 1,
+            "graph_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 10,
+            "graph_paths": 9
+          }
+        }
+      },
+      {
+        "scenario": "摇滚",
+        "median_seconds": {
+          "classic": 1.3273,
+          "graph": 0.0256
+        },
+        "top10_overlap": 0,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 2,
+            "graph_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 10,
+            "graph_paths": 10
+          }
+        }
+      },
+      {
+        "scenario": "爵士",
+        "median_seconds": {
+          "classic": 1.2764,
+          "graph": 0.0259
+        },
+        "top10_overlap": 1,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 8,
+            "graph_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 9,
+            "graph_paths": 10
+          }
+        }
+      }
+    ]
+  },
+  "path_repair": {
+    "metadata": {
+      "schema": "2",
+      "source_sha256": "f7b1eb07b415731a568e6ebdb17e687e74203559710804f3452aec4fa7bcabd1",
+      "backend": "Neo4j GDS 2.13.12",
+      "song_count": "293864"
+    },
+    "full_catalog_count": 293864,
+    "scenarios": [
+      {
+        "scenario": "华语流行",
+        "median_seconds": {
+          "classic": 1.1192,
+          "graph": 0.0268
+        },
+        "top10_overlap": 0,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 1,
+            "graph_paths": 0,
+            "multi_hop_paths": 0,
+            "similar_artist_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 10,
+            "graph_paths": 10,
+            "multi_hop_paths": 10,
+            "similar_artist_paths": 5
+          }
+        }
+      },
+      {
+        "scenario": "摇滚",
+        "median_seconds": {
+          "classic": 0.9293,
+          "graph": 0.0202
+        },
+        "top10_overlap": 0,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 2,
+            "graph_paths": 0,
+            "multi_hop_paths": 0,
+            "similar_artist_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 10,
+            "graph_paths": 10,
+            "multi_hop_paths": 10,
+            "similar_artist_paths": 0
+          }
+        }
+      },
+      {
+        "scenario": "爵士",
+        "median_seconds": {
+          "classic": 0.8639,
+          "graph": 0.0229
+        },
+        "top10_overlap": 1,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 8,
+            "graph_paths": 0,
+            "multi_hop_paths": 0,
+            "similar_artist_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 9,
+            "graph_paths": 10,
+            "multi_hop_paths": 7,
+            "similar_artist_paths": 4
+          }
+        }
+      }
+    ]
+  },
+  "release": {
+    "metadata": {
+      "schema": "3",
+      "source_sha256": "f7b1eb07b415731a568e6ebdb17e687e74203559710804f3452aec4fa7bcabd1",
+      "backend": "Neo4j GDS 2.13.12",
+      "song_count": "293864"
+    },
+    "full_catalog_count": 293864,
+    "scenarios": [
+      {
+        "scenario": "华语流行",
+        "median_seconds": {
+          "classic": 1.0686,
+          "graph": 0.0248
+        },
+        "top10_overlap": 0,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 1,
+            "graph_paths": 0,
+            "multi_hop_paths": 0,
+            "similar_artist_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 10,
+            "graph_paths": 10,
+            "multi_hop_paths": 10,
+            "similar_artist_paths": 5
+          }
+        }
+      },
+      {
+        "scenario": "摇滚",
+        "median_seconds": {
+          "classic": 0.8719,
+          "graph": 0.0191
+        },
+        "top10_overlap": 0,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 2,
+            "graph_paths": 0,
+            "multi_hop_paths": 0,
+            "similar_artist_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 10,
+            "graph_paths": 10,
+            "multi_hop_paths": 10,
+            "similar_artist_paths": 0
+          }
+        }
+      },
+      {
+        "scenario": "爵士",
+        "median_seconds": {
+          "classic": 0.8328,
+          "graph": 0.0234
+        },
+        "top10_overlap": 1,
+        "algorithms": {
+          "classic": {
+            "distinct_artists": 8,
+            "graph_paths": 0,
+            "multi_hop_paths": 0,
+            "similar_artist_paths": 0
+          },
+          "graph": {
+            "distinct_artists": 9,
+            "graph_paths": 10,
+            "multi_hop_paths": 7,
+            "similar_artist_paths": 4
+          }
+        }
+      }
+    ]
+  }
+}

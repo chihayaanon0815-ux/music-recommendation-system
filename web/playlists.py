@@ -3,12 +3,16 @@ import hashlib
 import io
 import os
 import secrets
+import sqlite3
 from pathlib import Path
 
 from flask import Blueprint, abort, current_app, flash, g, redirect, render_template, request, session, url_for
 from werkzeug.exceptions import RequestEntityTooLarge
 
+from recommender.graph_playlist import recommend_playlist_graph
 from recommender.playlist import profile, recommend_playlist
+from recommender.reviewed_tracks import CLEAN_REPLACEMENTS
+from recommender.track_content import is_recommendable_track
 from web import catalog
 
 
@@ -20,6 +24,7 @@ def register(app, root, assets):
     app.config.update(
         PLAYLIST_DB=user_dir / 'MusicRecommendation' / 'catalog.sqlite3',
         SONG_CSV=root / 'data' / 'processed' / 'songs.csv',
+        GRAPH_INDEX=root / 'data' / 'processed' / 'graph_index.sqlite3',
         GENRE_MAP=assets.parent / 'data_processing' / 'genre_map_zh.csv',
         MAX_CONTENT_LENGTH=1024 * 1024 + 8192,
     )
@@ -233,15 +238,41 @@ def generate(playlist_id):
         return redirect(url_for('playlists.detail', playlist_id=playlist_id))
     limit = int(raw_limit)
     connection = load_local()
-    seeds = connection.execute('SELECT * FROM items WHERE playlist_id=?', (playlist_id,)).fetchall()
-    candidates = connection.execute('SELECT song_id,song_name,artist,genres FROM catalog')
-    results = recommend_playlist((dict(song) for song in candidates), seeds, limit)
+    seeds = {}
+    for item in connection.execute('SELECT * FROM items WHERE playlist_id=? ORDER BY id', (playlist_id,)):
+        seed = dict(item)
+        replacement_id = CLEAN_REPLACEMENTS.get(seed['song_id']) if seed['matched'] else None
+        if replacement_id:
+            replacement = connection.execute(
+                'SELECT song_id,song_name,artist,genres FROM catalog WHERE song_id=?', (replacement_id,)
+            ).fetchone()
+            if replacement and is_recommendable_track(replacement['song_name'], replacement['genres'], replacement_id):
+                seed = {**dict(replacement), 'matched': True}
+        seeds.setdefault(seed['song_id'], seed)
+    algorithm = request.form.get('algorithm', 'classic')
+    if algorithm not in ('classic', 'graph'):
+        abort(400, '未知推荐算法。')
+    results = []
+    if algorithm == 'graph':
+        try:
+            results = recommend_playlist_graph(connection, seeds.values(), limit,
+                                               Path(current_app.config['GRAPH_INDEX']),
+                                               Path(current_app.config['SONG_CSV']))
+        except (OSError, sqlite3.Error):
+            current_app.logger.exception('Failed to load the graph recommendation index')
+        if not results:
+            flash('图推荐暂无可用索引或匹配歌曲，本次使用经典推荐。')
+            algorithm = 'classic'
+    if algorithm == 'classic':
+        candidates = connection.execute('SELECT song_id,song_name,artist,genres FROM catalog')
+        results = recommend_playlist((dict(song) for song in candidates), seeds.values(), limit)
     if not results:
         flash('没有可推荐的歌曲。请先添加能匹配风格或歌手的歌曲，再试一次。')
         return redirect(url_for('playlists.detail', playlist_id=playlist_id))
+    title = ' · 图推荐' if algorithm == 'graph' else ' · 推荐'
     with connection:
         generated = connection.execute('INSERT INTO playlists(name, requested) VALUES (?, ?)',
-                                       (playlist['name'] + ' · 推荐', limit)).lastrowid
+                                       (playlist['name'] + title, limit)).lastrowid
         for song in results:
             insert_item(connection, generated, song)
     return redirect(url_for('playlists.detail', playlist_id=generated))

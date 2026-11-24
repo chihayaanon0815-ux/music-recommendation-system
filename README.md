@@ -30,3 +30,9 @@ CSV 为 UTF-8，表头 song_id,song_name,artist,genres；song_id 非空且唯一
 示例：歌曲 01，歌手“测试歌手”，风格“流行|民谣”；选择流行及测试歌手得 5 分，理由包含两个匹配项。
 图一使用 genre_counts.csv；图二由 songs.csv 聚合非空歌手的歌曲数。数据不存在时说明状态，不虚构数据。A 提供可分发测试样例，B 和 C 的 mock 位于各自目录，不创建其他组的同名占位模块。
 A 额外负责 docs/data/；B 负责 docs/recommendation/；C 负责 docs/web/。各组仅修改各自目录，共享文件和依赖由团队指定的集成人协调，契约变更通过 PR 与各负责人协商。各分支阶段性 push 并提交 PR，不能强推 main 或自动合并他人工作。合并和目标 Windows 设备验证由团队负责。
+
+## 新版曲库与 Neo4j 图推荐
+
+- [曲库扩充、采集脚本及交接](docs/data/catalog-pipeline/README.md)
+- [图推荐构建、复现和对照](docs/recommendation/neo4j/README.md)
+- [推荐内容策略与 Windows 验收](docs/recommendation/neo4j/发布验收.md)

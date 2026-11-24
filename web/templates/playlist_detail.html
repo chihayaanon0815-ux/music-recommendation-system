@@ -60,6 +60,12 @@
       <form class="controls" method="post" action="{{ url_for('playlists.generate', playlist_id=playlist.id) }}">
         <input type="hidden" name="csrf" value="{{ session.playlist_csrf }}">
         <label>推荐首数 <input name="limit" type="number" value="10" min="1" max="100" required></label>
+        <label>推荐算法
+          <select name="algorithm">
+            <option value="classic">经典推荐</option>
+            <option value="graph">图推荐</option>
+          </select>
+        </label>
         <button>生成推荐歌单</button>
       </form>
     </section>

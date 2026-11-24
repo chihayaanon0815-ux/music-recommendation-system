@@ -1,0 +1,25 @@
+{
+  "initial_artists_attempted": 1000,
+  "deep_artists_attempted": 1000,
+  "artists_with_songs": 910,
+  "missing_artists": 90,
+  "deep_records_needing_review": 718,
+  "unique_candidate_songs": 222946,
+  "songs_with_genres": 199665,
+  "songs_missing_genres": 23281,
+  "genre_coverage_percent": 89.56,
+  "collected_genre_spellings": 554,
+  "all_genre_spellings": 582,
+  "source_observations": {
+    "apple": 329421,
+    "musicbrainz": 54018,
+    "deezer": 4849
+  },
+  "original_rows": 89740,
+  "original_name_artist_keys": 80650,
+  "overlap_name_artist_keys": 9732,
+  "new_name_artist_keys": 213214,
+  "combined_name_artist_keys": 293864,
+  "complete_artist_pass": true,
+  "coverage_rule": "同名同艺人及已知别名、简繁和部分版本后缀归一化，歌曲身份和平台目录完整性仍需核查"
+}

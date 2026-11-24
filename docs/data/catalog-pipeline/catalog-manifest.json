@@ -1,0 +1,43 @@
+{
+  "version": "2026-11-24-reviewed",
+  "songs": 293864,
+  "genre_conflicts_reviewed": 317,
+  "genre_conflicts_resolved": 0,
+  "genres_changed_in_this_pass": 0,
+  "duplicate_groups_reviewed": 4012,
+  "duplicate_group_outcomes": {
+    "有来源ID，录音关系待核验": 4011,
+    "共享来源曲目ID，保留所有记录": 1
+  },
+  "unmerged_duplicate_rows": 8305,
+  "files": {
+    "duplicate_review.csv": {
+      "bytes": 1595299,
+      "sha256": "379691df79073a736e8196048c121cbcc7f07584f247ce1cfc39a3ebfdf5ca3d"
+    },
+    "exclude_from_genre_ranking.csv": {
+      "bytes": 41949,
+      "sha256": "c6bd9cd398b37a2769f8302e95f417acefdf81b4f5f98be43de3d83c8bb8ecc3"
+    },
+    "genre_conflict_review.csv": {
+      "bytes": 86503,
+      "sha256": "b914a949f6fc647d2ffd1462c34f57c43c753265759a4422b044c7ec36e5aabf"
+    },
+    "genre_counts.csv": {
+      "bytes": 498,
+      "sha256": "1e510adc10086c1ab8e9c40d3c81bff8751616c7e9830667b38f7f65234a2a86"
+    },
+    "genre_ranking_policy.csv": {
+      "bytes": 3449340,
+      "sha256": "79e533a450871475ba7e5222e2729579e38f319ea36ef54085c525ec908ddbbd"
+    },
+    "songs.csv": {
+      "bytes": 23063403,
+      "sha256": "f7b1eb07b415731a568e6ebdb17e687e74203559710804f3452aec4fa7bcabd1"
+    },
+    "stratified_audit.csv": {
+      "bytes": 9632,
+      "sha256": "95245e6a65f01b9eda9442fcf75a42d21c8c30859780b819c54121934ec47311"
+    }
+  }
+}
