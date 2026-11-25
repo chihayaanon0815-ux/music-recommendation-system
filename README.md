@@ -33,6 +33,7 @@ A 额外负责 docs/data/；B 负责 docs/recommendation/；C 负责 docs/web/�
 
 ## 新版曲库与 Neo4j 图推荐
 
+- [662,939 首曲库的新增数据处理与行为覆盖复核](docs/data/catalog-behavior-2026-11-25/README.md)
 - [曲库扩充、采集脚本及交接](docs/data/catalog-pipeline/README.md)
 - [图推荐构建、复现和对照](docs/recommendation/neo4j/README.md)
 - [推荐内容策略与 Windows 验收](docs/recommendation/neo4j/发布验收.md)

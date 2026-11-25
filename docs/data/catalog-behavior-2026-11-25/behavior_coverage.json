@@ -1,0 +1,215 @@
+{
+  "source_archive": "音乐推荐数据_20261123.zip",
+  "release_archive": "曲库-行为数据标签补全版.zip",
+  "songs_sha256": "ae2a7d961ace0669ed3e2b7eb154cd9c9d2369bb4a6a0e64f6cf1d01cae04f94",
+  "catalog_tracks": 662939,
+  "msd_mapping_rows": 384546,
+  "spotify_mapping_rows": 89740,
+  "pending_titles": 4,
+  "raw_events_with_pending_titles": 65,
+  "behavior": {
+    "raw_triplets": {
+      "records": 48373586,
+      "distinct_source_song_ids": 384546,
+      "distinct_catalog_song_ids": 378499,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": [],
+      "unique_users": 1019318,
+      "matches_packaged_per_song_event_counts": true
+    },
+    "train.csv": {
+      "records": 38701364,
+      "distinct_source_song_ids": 91283,
+      "distinct_catalog_song_ids": 90477,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": [],
+      "unique_users": 624984,
+      "matches_packaged_per_song_event_counts": true
+    },
+    "test.csv": {
+      "records": 624984,
+      "distinct_source_song_ids": 77265,
+      "distinct_catalog_song_ids": 76614,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": [],
+      "unique_users": 624984,
+      "matches_packaged_per_song_event_counts": true
+    },
+    "wide_sample.csv": {
+      "records": 100000,
+      "distinct_source_song_ids": 38437,
+      "distinct_catalog_song_ids": 38200,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": [],
+      "unique_users": 1639,
+      "matches_packaged_per_song_event_counts": true
+    },
+    "train_parquet": {
+      "records": 38701364,
+      "distinct_source_song_ids": 91283,
+      "distinct_catalog_song_ids": 90477,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": [],
+      "parts": 18,
+      "matches_csv_per_song_event_counts": true
+    },
+    "test_parquet": {
+      "records": 624984,
+      "distinct_source_song_ids": 77265,
+      "distinct_catalog_song_ids": 76614,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": [],
+      "parts": 8,
+      "matches_csv_per_song_event_counts": true
+    }
+  },
+  "auxiliary_song_references": {
+    "msd_song_meta.csv#song_id": {
+      "records": 384546,
+      "distinct_source_song_ids": 384546,
+      "distinct_catalog_song_ids": 378499,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "msd_audio_features.csv#song_id": {
+      "records": 384546,
+      "distinct_source_song_ids": 384546,
+      "distinct_catalog_song_ids": 378499,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "song_dim_kcore.csv#song_id": {
+      "records": 91283,
+      "distinct_source_song_ids": 91283,
+      "distinct_catalog_song_ids": 90477,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "song_dim_kcore.csv#spotify_song_id": {
+      "records": 4441,
+      "distinct_source_song_ids": 4039,
+      "distinct_catalog_song_ids": 4039,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "song_pool.csv#song_id": {
+      "records": 5000,
+      "distinct_source_song_ids": 5000,
+      "distinct_catalog_song_ids": 4971,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "song_pool_named.csv#song_id": {
+      "records": 5000,
+      "distinct_source_song_ids": 5000,
+      "distinct_catalog_song_ids": 4971,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "mapreduce_song_stats.csv#song_id": {
+      "records": 384546,
+      "distinct_source_song_ids": 384546,
+      "distinct_catalog_song_ids": 378499,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "spark/song_stats.csv#song_id": {
+      "records": 91356,
+      "distinct_source_song_ids": 91356,
+      "distinct_catalog_song_ids": 90550,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "msd_spotify_map.csv#msd_song_id": {
+      "records": 7678,
+      "distinct_source_song_ids": 7678,
+      "distinct_catalog_song_ids": 7142,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "msd_spotify_map.csv#spotify_song_id": {
+      "records": 7678,
+      "distinct_source_song_ids": 6328,
+      "distinct_catalog_song_ids": 6328,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "itunes_crawl_top150.csv#song_id": {
+      "records": 150,
+      "distinct_source_song_ids": 150,
+      "distinct_catalog_song_ids": 150,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "mb_tags_topN.csv#song_id": {
+      "records": 100,
+      "distinct_source_song_ids": 100,
+      "distinct_catalog_song_ids": 100,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "/data/processed/songs.csv#song_id": {
+      "records": 89740,
+      "distinct_source_song_ids": 89740,
+      "distinct_catalog_song_ids": 80650,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "sample_recommendations.json": {
+      "records": 1000,
+      "distinct_source_song_ids": 454,
+      "distinct_catalog_song_ids": 454,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "cf_recommendations_with_names.json": {
+      "records": 1000,
+      "distinct_source_song_ids": 454,
+      "distinct_catalog_song_ids": 454,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "id_maps.json": {
+      "records": 91283,
+      "distinct_source_song_ids": 91283,
+      "distinct_catalog_song_ids": 90477,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    },
+    "itunes_crawl_cache.jsonl": {
+      "records": 150,
+      "distinct_source_song_ids": 150,
+      "distinct_catalog_song_ids": 150,
+      "unmapped_records": 0,
+      "unmapped_distinct_song_ids": 0,
+      "unmapped_song_id_examples": []
+    }
+  },
+  "similarity_shape": [
+    5000,
+    5000
+  ],
+  "explicitly_fictional_sample_rows": 8
+}

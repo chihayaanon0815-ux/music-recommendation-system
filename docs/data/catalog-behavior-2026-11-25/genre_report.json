@@ -1,0 +1,94 @@
+{
+  "catalog_tracks": 662939,
+  "missing_before": 367781,
+  "newly_labeled": 357168,
+  "missing_after": 10613,
+  "new_detail_tag_tracks": 227295,
+  "methods": {
+    "track_source": 191855,
+    "artist_catalog_majority": 37831,
+    "unresolved": 9171,
+    "track_consensus": 110237,
+    "track_conflict": 8625,
+    "artist_extended_catalog_majority": 6274,
+    "artist_external_genre": 2346,
+    "content_only": 1442
+  },
+  "new_genre_counts": {
+    "另类与实验": 3463,
+    "摇滚": 138911,
+    "流行": 28985,
+    "电子": 34712,
+    "爵士": 18093,
+    "乡村": 11531,
+    "拉丁": 14463,
+    "嘻哈": 24477,
+    "轻音乐": 985,
+    "节奏布鲁斯与灵魂乐": 11450,
+    "世界音乐": 10261,
+    "朋克": 5205,
+    "民谣": 6444,
+    "新世纪": 2291,
+    "古典": 1883,
+    "宗教音乐": 6421,
+    "金属": 20328,
+    "蓝调": 4655,
+    "雷鬼": 9314,
+    "舞曲": 3292,
+    "放克": 4
+  },
+  "downloaded_track_annotations": {
+    "AllMusic MAGD": {
+      "rows": 422714,
+      "matched_catalog_tracks": 192922
+    },
+    "AllMusic MASD": {
+      "rows": 273936,
+      "matched_catalog_tracks": 143845
+    },
+    "tagtraum CD2C": {
+      "rows": 191401,
+      "matched_catalog_tracks": 117570
+    },
+    "tagtraum CD2": {
+      "rows": 280831,
+      "matched_catalog_tracks": 172235
+    },
+    "Last.fm LFMGD": {
+      "rows": 505216,
+      "matched_catalog_tracks": 257871
+    },
+    "beaTunes BGD": {
+      "rows": 677038,
+      "matched_catalog_tracks": 278235
+    }
+  },
+  "existing_genre_tracks_with_new_details": 5441,
+  "external_artist_genre_profiles": 1786,
+  "apple_live_matches": {
+    "artists_queried": 30,
+    "exact_catalog_track_matches": 190
+  },
+  "leave_one_out_direct_consensus_check": {
+    "catalog_majority": {
+      "predicted": 11382,
+      "agreed": 10632
+    },
+    "extended_catalog_majority": {
+      "predicted": 274,
+      "agreed": 201
+    },
+    "abstained": {
+      "tracks": 213
+    }
+  },
+  "songs_sha256": "ae2a7d961ace0669ed3e2b7eb154cd9c9d2369bb4a6a0e64f6cf1d01cae04f94",
+  "detail_only_gap_tracks": 2621,
+  "coverage_percent": 98.399,
+  "validation": {
+    "song_ids_names_artists_identical": true,
+    "existing_nonempty_genres_identical": true,
+    "behavior_and_spotify_mappings_preserved": true,
+    "detail_evidence_validated": true
+  }
+}
