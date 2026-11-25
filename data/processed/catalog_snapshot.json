@@ -1,12 +1,12 @@
 {
-  "version": "2026-11-25-behavior-catalog",
+  "version": "2026-11-25-behavior-catalog-name-repair",
   "tracks": 662939,
-  "last_addition": 369075,
-  "previous_release_commit": "a66352ef3bb43bbadb709533e7af8e040a5bab82",
+  "last_addition": 0,
+  "previous_release_commit": "1c267143f322c173fa2c11fc2e94b3a97b0772ad",
   "files": [
     {
       "path": "data/processed/catalog-parts/part-001.csv",
-      "sha256": "63261f1f4af138f08a41e1495c2d447c0fa95f60d9fb8c148126d0ab7d9ab0d0"
+      "sha256": "3c8bda4884d793d900f989b3871a1b00e153507373629c23bbbee8a41cde9957"
     },
     {
       "path": "data/processed/catalog-parts/part-002.csv",
@@ -18,27 +18,27 @@
     },
     {
       "path": "data/processed/catalog-parts/part-004.csv",
-      "sha256": "8f21215e0c365510e1c047a9a2ece67c477673c8eb8ffc29b2af044c7b1daeb1"
+      "sha256": "4a7cd3534b8868e41f6eb48ff1f47cb37228d511ead293cc7030570ad5c73d99"
     },
     {
       "path": "data/processed/catalog-parts/part-005.csv",
-      "sha256": "76f6a1ba81ae08c8ddaa1611738da5e670c47184719f058e460dae50016a8a9d"
+      "sha256": "6bfe255bac3faa26db6ac30d82433a6b7de9cc4230b38a10bcf7c3620fddef62"
     },
     {
       "path": "data/processed/catalog-parts/part-006.csv",
-      "sha256": "3fade3b7c2a9e376c8b960c792da858f3ab0566b45b238107ce32abc81f9a3ec"
+      "sha256": "90c43a4faaf2823597655d89668f64aa8cea0624838f5791c9405cec7563b1b7"
     },
     {
       "path": "data/processed/catalog-parts/part-007.csv",
-      "sha256": "9ebc774b1f6c30ac9d5bedd2612cbe59daac8af19bebe890070478638b14f85c"
+      "sha256": "d2664a8a0f8f978f4168d8410fa3f362cac4bc5e759e619b1aea245ac635eb8a"
     },
     {
       "path": "data/processed/catalog-parts/part-008.csv",
-      "sha256": "f745a1e40cd57400ed059dede64faf951946db0e5dea47abd154ddc396f4558a"
+      "sha256": "71fda85d1d2470c7544235fd3b08abff35413cc1cc9b463c3546e83f4d324276"
     },
     {
       "path": "data/processed/catalog-parts/part-009.csv",
-      "sha256": "1429b00f1cc37cf25b74051efa95dc147858a650c592ae73baa7e3cd958107a7"
+      "sha256": "1d56c315b1dd0c1aef4ba7a35cbd4f93da664c326966d7821cad254afd27f1e9"
     }
   ],
   "genre_counts": "data/processed/genre_counts.csv",
@@ -56,28 +56,28 @@
       "sha256": "8a58ac17716432b41e74bb36d236ec8868a7d53a1dfdb9b86b729bd6d9f87e33"
     },
     "docs/data/catalog-behavior-2026-11-25/genre_report.json": {
-      "bytes": 2411,
-      "sha256": "a6fb8c21547ed22f103dfcc57525e96f62b03766a65fa880bddb76d8fa924fd4"
+      "bytes": 2426,
+      "sha256": "143ec016a7b40a59e45656f60f350e0b48bdffc6896c3a1abadd5ef484d4309d"
     },
     "docs/data/catalog-behavior-2026-11-25/behavior_merge_report.json": {
       "bytes": 1491,
       "sha256": "ca084e8c78620291991644ec9d4cd9e016d352534d13fd0943459ac932c17483"
     },
     "docs/data/catalog-behavior-2026-11-25/behavior_coverage.json": {
-      "bytes": 7005,
-      "sha256": "b305b547f3c6fd756378a1794c41b907500a1b69a60f7870ee3ce9428ecff387"
+      "bytes": 7167,
+      "sha256": "db763a75b0d9b117212f50b4806951e27fb8bfd81294882a1cbdb35cc48bdcab"
     },
     "docs/data/catalog-behavior-2026-11-25/README.md": {
-      "bytes": 5266,
-      "sha256": "1b449f470eeb373b817727fccd35e847da7ec4e27d992a6eaa22eb6bcf43bd89"
+      "bytes": 5786,
+      "sha256": "94f51b13e0c9c842a4d3ae9ced344b6bba5d7a5cace3cf15fa312efec58df91a"
     },
     "data/processed/README.md": {
       "bytes": 549,
       "sha256": "542a5852dfa0117fa3587ac543d5d0a2c46fb3c25192dcc0afd6caf473d52bb4"
     },
     "data/processed/catalog-parts/part-001.csv": {
-      "bytes": 5799954,
-      "sha256": "63261f1f4af138f08a41e1495c2d447c0fa95f60d9fb8c148126d0ab7d9ab0d0"
+      "bytes": 5799956,
+      "sha256": "3c8bda4884d793d900f989b3871a1b00e153507373629c23bbbee8a41cde9957"
     },
     "data/processed/catalog-parts/part-002.csv": {
       "bytes": 5799948,
@@ -88,28 +88,28 @@
       "sha256": "1961fc0d8e7662a73de20ff2c49e2148913c7240d54fa15f01d056ad94406930"
     },
     "data/processed/catalog-parts/part-004.csv": {
-      "bytes": 5799947,
-      "sha256": "8f21215e0c365510e1c047a9a2ece67c477673c8eb8ffc29b2af044c7b1daeb1"
+      "bytes": 5799959,
+      "sha256": "4a7cd3534b8868e41f6eb48ff1f47cb37228d511ead293cc7030570ad5c73d99"
     },
     "data/processed/catalog-parts/part-005.csv": {
-      "bytes": 5799959,
-      "sha256": "76f6a1ba81ae08c8ddaa1611738da5e670c47184719f058e460dae50016a8a9d"
+      "bytes": 5800372,
+      "sha256": "6bfe255bac3faa26db6ac30d82433a6b7de9cc4230b38a10bcf7c3620fddef62"
     },
     "data/processed/catalog-parts/part-006.csv": {
-      "bytes": 5799999,
-      "sha256": "3fade3b7c2a9e376c8b960c792da858f3ab0566b45b238107ce32abc81f9a3ec"
+      "bytes": 5800434,
+      "sha256": "90c43a4faaf2823597655d89668f64aa8cea0624838f5791c9405cec7563b1b7"
     },
     "data/processed/catalog-parts/part-007.csv": {
-      "bytes": 5799939,
-      "sha256": "9ebc774b1f6c30ac9d5bedd2612cbe59daac8af19bebe890070478638b14f85c"
+      "bytes": 5800435,
+      "sha256": "d2664a8a0f8f978f4168d8410fa3f362cac4bc5e759e619b1aea245ac635eb8a"
     },
     "data/processed/catalog-parts/part-008.csv": {
-      "bytes": 5799913,
-      "sha256": "f745a1e40cd57400ed059dede64faf951946db0e5dea47abd154ddc396f4558a"
+      "bytes": 5800322,
+      "sha256": "71fda85d1d2470c7544235fd3b08abff35413cc1cc9b463c3546e83f4d324276"
     },
     "data/processed/catalog-parts/part-009.csv": {
-      "bytes": 406832,
-      "sha256": "1429b00f1cc37cf25b74051efa95dc147858a650c592ae73baa7e3cd958107a7"
+      "bytes": 406856,
+      "sha256": "1d56c315b1dd0c1aef4ba7a35cbd4f93da664c326966d7821cad254afd27f1e9"
     },
     "data/processed/behavior/msd_song_id_map.csv.gz": {
       "bytes": 5451978,
@@ -130,7 +130,15 @@
     "web/catalog_snapshot.py": {
       "bytes": 2238,
       "sha256": "2ef1a45d7af7a25d1e9c566936af87ad08238015b6056e4bc38936e3dfa02d08"
+    },
+    "docs/data/catalog-behavior-2026-11-25/name_encoding_review.json": {
+      "bytes": 1156,
+      "sha256": "c1fca967db4844a59b1abba8cfcee9a028b2ffb806a1147cbf3387a09119d204"
+    },
+    "docs/data/catalog-behavior-2026-11-25/name_encoding_repairs.csv": {
+      "bytes": 139333,
+      "sha256": "e5e84c366e7dcd0869c1d107728d0d40fce371a8caf8e2ca6b534c228fc50260"
     }
   },
-  "songs_sha256": "ae2a7d961ace0669ed3e2b7eb154cd9c9d2369bb4a6a0e64f6cf1d01cae04f94"
+  "songs_sha256": "d81cbdba47d18a2329b9f6a6e40602e41ad2ebb0f6f652ef1eecc739e63cd61d"
 }

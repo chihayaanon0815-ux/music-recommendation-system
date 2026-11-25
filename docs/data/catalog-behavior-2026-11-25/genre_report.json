@@ -82,7 +82,7 @@
       "tracks": 213
     }
   },
-  "songs_sha256": "ae2a7d961ace0669ed3e2b7eb154cd9c9d2369bb4a6a0e64f6cf1d01cae04f94",
+  "songs_sha256": "d81cbdba47d18a2329b9f6a6e40602e41ad2ebb0f6f652ef1eecc739e63cd61d",
   "detail_only_gap_tracks": 2621,
   "coverage_percent": 98.399,
   "validation": {
@@ -90,5 +90,6 @@
     "existing_nonempty_genres_identical": true,
     "behavior_and_spotify_mappings_preserved": true,
     "detail_evidence_validated": true
-  }
+  },
+  "songs_sha256_before_metadata_repair": "ae2a7d961ace0669ed3e2b7eb154cd9c9d2369bb4a6a0e64f6cf1d01cae04f94"
 }

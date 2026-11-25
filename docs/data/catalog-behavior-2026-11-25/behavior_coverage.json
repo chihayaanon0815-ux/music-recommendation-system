@@ -1,7 +1,7 @@
 {
   "source_archive": "音乐推荐数据_20261123.zip",
   "release_archive": "曲库-行为数据标签补全版.zip",
-  "songs_sha256": "ae2a7d961ace0669ed3e2b7eb154cd9c9d2369bb4a6a0e64f6cf1d01cae04f94",
+  "songs_sha256": "d81cbdba47d18a2329b9f6a6e40602e41ad2ebb0f6f652ef1eecc739e63cd61d",
   "catalog_tracks": 662939,
   "msd_mapping_rows": 384546,
   "spotify_mapping_rows": 89740,
@@ -211,5 +211,16 @@
     5000,
     5000
   ],
-  "explicitly_fictional_sample_rows": 8
+  "explicitly_fictional_sample_rows": 8,
+  "source_audit_songs_sha256": "ae2a7d961ace0669ed3e2b7eb154cd9c9d2369bb4a6a0e64f6cf1d01cae04f94",
+  "metadata_repair_validation": {
+    "unchanged_song_ids_and_genres": true,
+    "unchanged_source_maps": true,
+    "verified_event_rows": {
+      "raw_events": 48373586,
+      "train_events": 38701364,
+      "test_events": 624984,
+      "wide_sample_events": 100000
+    }
+  }
 }

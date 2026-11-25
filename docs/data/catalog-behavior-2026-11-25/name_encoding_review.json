@@ -1,0 +1,42 @@
+{
+  "base_git_commit": "1c267143f322c173fa2c11fc2e94b3a97b0772ad",
+  "original_songs_sha256": "ae2a7d961ace0669ed3e2b7eb154cd9c9d2369bb4a6a0e64f6cf1d01cae04f94",
+  "songs_sha256": "d81cbdba47d18a2329b9f6a6e40602e41ad2ebb0f6f652ef1eecc739e63cd61d",
+  "catalog_tracks": 662939,
+  "repaired_tracks": 838,
+  "repaired_fields": 843,
+  "remaining_control_fields": 0,
+  "original_control_codepoints": {
+    "U+0092": 6,
+    "U+0082": 1,
+    "U+0019": 809,
+    "U+001D": 4,
+    "U+0018": 41,
+    "U+0013": 30,
+    "U+001C": 18,
+    "U+0014": 3,
+    "U+001E": 4,
+    "U+0009": 1
+  },
+  "repair_methods": {
+    "legacy_apostrophe_artists_release": 5,
+    "published_title": 3,
+    "corroborated_punctuation_pattern": 8,
+    "msd_punctuation_pattern": 815,
+    "published_artist_credit": 12
+  },
+  "duplicate_name_artist_groups_for_review": 0,
+  "name_placeholders": 4,
+  "missing_main_genre": 10613,
+  "bridge_rows": {
+    "msd_song_id_map.csv": 384546,
+    "spotify_song_id_map.csv": 89740
+  },
+  "event_rows": {
+    "raw_events": 48373586,
+    "train_events": 38701364,
+    "test_events": 624984,
+    "wide_sample_events": 100000
+  },
+  "unmapped_event_rows": 0
+}
