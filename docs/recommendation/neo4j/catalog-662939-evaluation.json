@@ -1,0 +1,667 @@
+{
+  "metadata": {
+    "schema": "3",
+    "source_sha256": "d81cbdba47d18a2329b9f6a6e40602e41ad2ebb0f6f652ef1eecc739e63cd61d",
+    "backend": "Neo4j GDS 2.13.12",
+    "song_count": "662939"
+  },
+  "full_catalog_count": 662939,
+  "sqlite_sync_seconds": 4.883,
+  "evaluation": "Fixed real-catalog probe tracks, no listening or preference labels",
+  "scenarios": [
+    {
+      "scenario": "华语流行",
+      "seeds": [
+        {
+          "song_id": "02K5L2D21TVIINipDIPEfA",
+          "song_name": "千里之外",
+          "artist": "Jay Chou",
+          "genres": "流行",
+          "name_key": "千里之外",
+          "artist_key": "jay chou",
+          "source": "csv",
+          "matched": true
+        },
+        {
+          "song_id": "0cONHWTIfgEpAuVwbbwGgc",
+          "song_name": "怪美的",
+          "artist": "Jolin Tsai",
+          "genres": "流行",
+          "name_key": "怪美的",
+          "artist_key": "jolin tsai",
+          "source": "csv",
+          "matched": true
+        },
+        {
+          "song_id": "0bcy0hFL8G0IfV0mpeJLzZ",
+          "song_name": "尚好的青春",
+          "artist": "Stefanie Sun",
+          "genres": "流行",
+          "name_key": "尚好的青春",
+          "artist_key": "stefanie sun",
+          "source": "csv",
+          "matched": true
+        }
+      ],
+      "median_seconds": {
+        "classic": 2.6268,
+        "graph": 0.0358
+      },
+      "top10_overlap": 0,
+      "algorithms": {
+        "classic": {
+          "distinct_artists": 1,
+          "graph_paths": 0,
+          "multi_hop_paths": 0,
+          "similar_artist_paths": 0,
+          "songs": [
+            {
+              "song_id": "04x6DpeFQ72efXsD0DmWPQ",
+              "song_name": "明明就",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            },
+            {
+              "song_id": "09V52TgKoNpp0yGswRV3UD",
+              "song_name": "威廉古堡",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            },
+            {
+              "song_id": "0CShrfhwT7jnU255KHoTLf",
+              "song_name": "外婆",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            },
+            {
+              "song_id": "0F02KChKwbcQ3tk4q1YxLH",
+              "song_name": "晴天",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            },
+            {
+              "song_id": "0JB2nnrP35zVYnQcYpAnCb",
+              "song_name": "開不了口",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            },
+            {
+              "song_id": "0RF0KWRmViSC222kfVJsPo",
+              "song_name": "最後的戰役",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            },
+            {
+              "song_id": "0TDnUtKMOJruB90aDEMsDR",
+              "song_name": "聽媽媽的話",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            },
+            {
+              "song_id": "0UY2GoaZvTI29l64yp8yAK",
+              "song_name": "煙花易冷",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            },
+            {
+              "song_id": "0iRFWnXN3PYWjlEocT44Ox",
+              "song_name": "本草綱目",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            },
+            {
+              "song_id": "0krkOwHreUD3dmXNti1PUa",
+              "song_name": "牛仔很忙",
+              "artist": "Jay Chou",
+              "genres": "流行",
+              "score": 11,
+              "reason": "流行（原歌单 3 首）；Jay Chou（原歌单 1 首）"
+            }
+          ]
+        },
+        "graph": {
+          "distinct_artists": 10,
+          "graph_paths": 10,
+          "multi_hop_paths": 10,
+          "similar_artist_paths": 5,
+          "songs": [
+            {
+              "song_id": "catalog:07855802a332c2a9b9104c83",
+              "song_name": "愛情的花樣",
+              "artist": "孙燕姿",
+              "genres": "流行",
+              "reason": "匹配歌单艺人；共享曲风：华语流行、流行；图关系：《千里之外》 → 华语流行 → 愛情的花樣",
+              "score": 69.5
+            },
+            {
+              "song_id": "catalog:20d8f2426a3359e2234e7ef6",
+              "song_name": "絕不絕",
+              "artist": "林俊杰",
+              "genres": "流行",
+              "reason": "共享曲风：华语流行、流行；图关系：蔡依林 → 林俊杰 → 《絕不絕》（相似艺人）",
+              "score": 71.9
+            },
+            {
+              "song_id": "catalog:960a53e5fc8caf93705ba0e0",
+              "song_name": "那一年, 這一天",
+              "artist": "任賢齊 & 舒淇",
+              "genres": "流行",
+              "reason": "共享曲风：华语流行、流行；图关系：《千里之外》 → 华语流行 → 那一年, 這一天",
+              "score": 73.0
+            },
+            {
+              "song_id": "catalog:7692db7311800b80f50a3f57",
+              "song_name": "黄金甲",
+              "artist": "周杰伦",
+              "genres": "流行",
+              "reason": "匹配歌单艺人；共享曲风：华语流行、流行；图关系：《千里之外》 → 华语流行 → 黄金甲",
+              "score": 69.4
+            },
+            {
+              "song_id": "catalog:790b958fe0aa7abb480ef1c8",
+              "song_name": "記得要忘記-希望版",
+              "artist": "S.H.E",
+              "genres": "流行",
+              "reason": "共享曲风：华语流行、流行；图关系：孙燕姿 → S.H.E → 《記得要忘記-希望版》（相似艺人）",
+              "score": 71.8
+            },
+            {
+              "song_id": "catalog:c8e31a5f9be0045ad20fb6c0",
+              "song_name": "一夜長大",
+              "artist": "梁静茹",
+              "genres": "流行",
+              "reason": "共享曲风：华语流行、流行；图关系：周杰伦 → 梁静茹 → 《一夜長大》（相似艺人）",
+              "score": 71.7
+            },
+            {
+              "song_id": "catalog:8bd5c3f714ae1d05623ee34e",
+              "song_name": "點水",
+              "artist": "杨丞琳",
+              "genres": "流行",
+              "reason": "共享曲风：华语流行、流行；图关系：周杰伦 → 杨丞琳 → 《點水》（相似艺人）",
+              "score": 71.7
+            },
+            {
+              "song_id": "catalog:c62dae4c5168aa34e25cbedd",
+              "song_name": "試了擱再試",
+              "artist": "苏芮",
+              "genres": "流行",
+              "reason": "共享曲风：华语流行、流行；图关系：周杰伦 → 苏芮 → 《試了擱再試》（相似艺人）",
+              "score": 71.6
+            },
+            {
+              "song_id": "4HQlmwaEiwjE7cQb6PMSJw",
+              "song_name": "今天我非常寂寞",
+              "artist": "Wynners",
+              "genres": "流行",
+              "reason": "共享曲风：华语流行、流行；图关系：《千里之外》 → 华语流行 → 今天我非常寂寞",
+              "score": 64.7
+            },
+            {
+              "song_id": "catalog:e4a9e1d7939fd0d0a280da14",
+              "song_name": "卻上心頭",
+              "artist": "龚琳娜",
+              "genres": "古典|另类与实验|流行",
+              "reason": "共享曲风：华语流行、流行；图关系：《千里之外》 → 华语流行 → 卻上心頭",
+              "score": 60.4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scenario": "摇滚",
+      "seeds": [
+        {
+          "song_id": "00oZhqZIQfL9P5CjOP6JsO",
+          "song_name": "Tomorrow Never Knows",
+          "artist": "The Beatles",
+          "genres": "摇滚",
+          "name_key": "tomorrow never knows",
+          "artist_key": "the beatles",
+          "source": "csv",
+          "matched": true
+        },
+        {
+          "song_id": "2zkfyPrPY0OlFJuui5j5FE",
+          "song_name": "Was It All Worth It",
+          "artist": "Queen",
+          "genres": "摇滚",
+          "name_key": "was it all worth it",
+          "artist_key": "queen",
+          "source": "csv",
+          "matched": true
+        },
+        {
+          "song_id": "05uGBKRCuePsf43Hfm0JwX",
+          "song_name": "Brain Damage",
+          "artist": "Pink Floyd",
+          "genres": "摇滚",
+          "name_key": "brain damage",
+          "artist_key": "pink floyd",
+          "source": "csv",
+          "matched": true
+        }
+      ],
+      "median_seconds": {
+        "classic": 2.7459,
+        "graph": 0.0241
+      },
+      "top10_overlap": 0,
+      "algorithms": {
+        "classic": {
+          "distinct_artists": 2,
+          "graph_paths": 0,
+          "multi_hop_paths": 0,
+          "similar_artist_paths": 0,
+          "songs": [
+            {
+              "song_id": "01SfTM5nfCou5gQL70r6gs",
+              "song_name": "Golden Slumbers",
+              "artist": "The Beatles",
+              "genres": "摇滚",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；The Beatles（原歌单 1 首）"
+            },
+            {
+              "song_id": "06ypiqmILMdVeaiErMFA91",
+              "song_name": "Drive My Car",
+              "artist": "The Beatles",
+              "genres": "摇滚",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；The Beatles（原歌单 1 首）"
+            },
+            {
+              "song_id": "077OhUjy58qkjscrXjW696",
+              "song_name": "The Show Must Go On",
+              "artist": "Pink Floyd",
+              "genres": "摇滚",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；Pink Floyd（原歌单 1 首）"
+            },
+            {
+              "song_id": "08ZP6LzduiKEURYbNex8SH",
+              "song_name": "A Great Day For Freedom 2022",
+              "artist": "Pink Floyd",
+              "genres": "摇滚",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；Pink Floyd（原歌单 1 首）"
+            },
+            {
+              "song_id": "09x9v1o51dbqi5H0u7UGfp",
+              "song_name": "I Will",
+              "artist": "The Beatles",
+              "genres": "摇滚",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；The Beatles（原歌单 1 首）"
+            },
+            {
+              "song_id": "0CaBBQsaAiRHhiLmzi7ZRp",
+              "song_name": "Two Of Us",
+              "artist": "The Beatles",
+              "genres": "摇滚|流行",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；The Beatles（原歌单 1 首）"
+            },
+            {
+              "song_id": "0ESIjVxnDnCDaTPo6sStHm",
+              "song_name": "Till There Was You",
+              "artist": "The Beatles",
+              "genres": "摇滚",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；The Beatles（原歌单 1 首）"
+            },
+            {
+              "song_id": "0ESdtt9cjGZUkUbaubSrv2",
+              "song_name": "Goodbye Blue Sky",
+              "artist": "Pink Floyd",
+              "genres": "摇滚",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；Pink Floyd（原歌单 1 首）"
+            },
+            {
+              "song_id": "0FzGKD3N0jK6nNOyOJBvNG",
+              "song_name": "While My Guitar Gently Weeps",
+              "artist": "The Beatles",
+              "genres": "摇滚",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；The Beatles（原歌单 1 首）"
+            },
+            {
+              "song_id": "0GqGrPWhmiRX9BU93AYFOW",
+              "song_name": "Wish You Were Here",
+              "artist": "Pink Floyd",
+              "genres": "摇滚",
+              "score": 11,
+              "reason": "摇滚（原歌单 3 首）；Pink Floyd（原歌单 1 首）"
+            }
+          ]
+        },
+        "graph": {
+          "distinct_artists": 10,
+          "graph_paths": 10,
+          "multi_hop_paths": 9,
+          "similar_artist_paths": 2,
+          "songs": [
+            {
+              "song_id": "catalog:5a4848b0e59aef22c189eda6",
+              "song_name": "Dreamer's Ball",
+              "artist": "Queen",
+              "genres": "摇滚",
+              "reason": "匹配歌单艺人；共享曲风：摇滚；图关系：《Tomorrow Never Knows》 → 摇滚 → Dreamer's Ball",
+              "score": 67.0
+            },
+            {
+              "song_id": "1sdz3nsrkX4Yo42KLPrmYV",
+              "song_name": "Cloud Number Nine",
+              "artist": "Bryan Adams",
+              "genres": "摇滚|民谣",
+              "reason": "共享曲风：摇滚；图关系：The Beatles → Bryan Adams → 《Cloud Number Nine》（相似艺人）",
+              "score": 44.3
+            },
+            {
+              "song_id": "0Ho6NsIqN6oOj2wY4xSSpp",
+              "song_name": "Light On",
+              "artist": "Maggie Rogers",
+              "genres": "摇滚|流行",
+              "reason": "共享曲风：摇滚；图关系：《Tomorrow Never Knows》 → 摇滚 → Light On",
+              "score": 73.0
+            },
+            {
+              "song_id": "catalog:1c7126a71ce87a74d63974e6",
+              "song_name": "The Sheik Of Araby (Decca Audition)",
+              "artist": "The Beatles",
+              "genres": "摇滚",
+              "reason": "匹配歌单艺人；共享曲风：摇滚；图关系：The Beatles → The Sheik Of Araby (Decca Audition)",
+              "score": 66.9
+            },
+            {
+              "song_id": "catalog:f955b5f1612210317340b570",
+              "song_name": "Unity (Liquid Stranger Remix)",
+              "artist": "Shinedown",
+              "genres": "摇滚",
+              "reason": "共享曲风：摇滚；图关系：The Beatles → Shinedown → 《Unity (Liquid Stranger Remix)》（相似艺人）",
+              "score": 43.0
+            },
+            {
+              "song_id": "catalog:2c494eb8d291cf794080ad15",
+              "song_name": "Kinder",
+              "artist": "Die Toten Hosen & Bettina Wegner",
+              "genres": "摇滚",
+              "reason": "共享曲风：摇滚；图关系：《Tomorrow Never Knows》 → 摇滚 → Kinder",
+              "score": 70.5
+            },
+            {
+              "song_id": "09gysnJpfQ3ublBmJDfcEC",
+              "song_name": "SAD GIRLZ LUV MONEY Remix (feat. Kali Uchis and Moliy)",
+              "artist": "Amaarae & Kali Uchis & Moliy",
+              "genres": "摇滚",
+              "reason": "共享曲风：摇滚；图关系：《Tomorrow Never Knows》 → 摇滚 → SAD GIRLZ LUV MONEY Remix (feat. Kali Uchis and Moliy)",
+              "score": 61.1
+            },
+            {
+              "song_id": "2HNIknCF59i1QoXzQUM7cw",
+              "song_name": "Ağlarsa Anam Ağlar",
+              "artist": "3 Hürel",
+              "genres": "摇滚",
+              "reason": "共享曲风：摇滚；图关系：《Tomorrow Never Knows》 → 摇滚 → Ağlarsa Anam Ağlar",
+              "score": 61.1
+            },
+            {
+              "song_id": "msd:SOHGSAV12A6D2281DC",
+              "song_name": "Merry Christmas Everybody",
+              "artist": "Chicory Tip",
+              "genres": "摇滚",
+              "reason": "共享曲风：摇滚；图关系：《Tomorrow Never Knows》 → 摇滚 → Merry Christmas Everybody",
+              "score": 58.5
+            },
+            {
+              "song_id": "msd:SOVXVNL12AC3DF4F15",
+              "song_name": "Cecilie",
+              "artist": "The Wolfmen",
+              "genres": "摇滚",
+              "reason": "共享曲风：摇滚；图关系：《Tomorrow Never Knows》 → 摇滚 → Cecilie",
+              "score": 58.4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scenario": "爵士",
+      "seeds": [
+        {
+          "song_id": "catalog:000bd2dfab88ecba3ebfe2e2",
+          "song_name": "My Old Flame (feat. Sonny Rollins)",
+          "artist": "Miles Davis",
+          "genres": "爵士",
+          "name_key": "my old flame (feat. sonny rollins)",
+          "artist_key": "miles davis",
+          "source": "csv",
+          "matched": true
+        },
+        {
+          "song_id": "3zIuHdD8dkh1vPxQu334T7",
+          "song_name": "Blue Train",
+          "artist": "John Coltrane",
+          "genres": "爵士",
+          "name_key": "blue train",
+          "artist_key": "john coltrane",
+          "source": "csv",
+          "matched": true
+        },
+        {
+          "song_id": "3f9KhpRN6mMYoVnpuozgHD",
+          "song_name": "Gary's Theme",
+          "artist": "Bill Evans",
+          "genres": "轻音乐",
+          "name_key": "gary's theme",
+          "artist_key": "bill evans",
+          "source": "csv",
+          "matched": true
+        }
+      ],
+      "median_seconds": {
+        "classic": 2.1751,
+        "graph": 0.0347
+      },
+      "top10_overlap": 1,
+      "algorithms": {
+        "classic": {
+          "distinct_artists": 8,
+          "graph_paths": 0,
+          "multi_hop_paths": 0,
+          "similar_artist_paths": 0,
+          "songs": [
+            {
+              "song_id": "6bGyX75xUytV0Ze8CY18UR",
+              "song_name": "Santa Claus Is Coming To Town",
+              "artist": "Bill Evans",
+              "genres": "爵士|轻音乐",
+              "score": 11,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）；Bill Evans（原歌单 1 首）"
+            },
+            {
+              "song_id": "0E8q2Fx2XuzXCO2NSAppkR",
+              "song_name": "In A Sentimental Mood",
+              "artist": "Duke Ellington & John Coltrane",
+              "genres": "古典|爵士|轻音乐",
+              "score": 9,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）"
+            },
+            {
+              "song_id": "0s7LZdfEIdXJPNLfNsKQXF",
+              "song_name": "Away In A Manger",
+              "artist": "Dave Brubeck",
+              "genres": "爵士|轻音乐",
+              "score": 9,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）"
+            },
+            {
+              "song_id": "0sCeNwt8xRCMR4NhKpMyBe",
+              "song_name": "Cantaloupe Island",
+              "artist": "Herbie Hancock",
+              "genres": "爵士|轻音乐",
+              "score": 9,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）"
+            },
+            {
+              "song_id": "0vB4Vd6PtkJSEnWsmqATnZ",
+              "song_name": "Nothing's Gonna Change My Love for You",
+              "artist": "George Benson",
+              "genres": "摇滚|爵士|舞曲|节奏布鲁斯与灵魂乐|轻音乐",
+              "score": 9,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）"
+            },
+            {
+              "song_id": "11TMcTS3iao1dvMogUSQVk",
+              "song_name": "De Camino a la Vereda",
+              "artist": "Buena Vista Social Club",
+              "genres": "世界音乐|拉丁|爵士|轻音乐",
+              "score": 9,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）"
+            },
+            {
+              "song_id": "15lAKAkwZpm5ohh2WikPlc",
+              "song_name": "Hallelujah",
+              "artist": "George Winston",
+              "genres": "爵士|轻音乐",
+              "score": 9,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）"
+            },
+            {
+              "song_id": "15uMuSvHZi7gm02mM3mTwh",
+              "song_name": "Freedom For The Stallion",
+              "artist": "George Winston",
+              "genres": "爵士|轻音乐",
+              "score": 9,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）"
+            },
+            {
+              "song_id": "1Mbv3EJOUo6twpjn1p5oWY",
+              "song_name": "O Tannenbaum",
+              "artist": "Dave Brubeck",
+              "genres": "爵士|轻音乐",
+              "score": 9,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）"
+            },
+            {
+              "song_id": "1Ml3WKPxXfBnwcAScFGrdf",
+              "song_name": "God Rest Ye, Merry Gentlemen",
+              "artist": "Kenny Burrell",
+              "genres": "爵士|轻音乐",
+              "score": 9,
+              "reason": "爵士（原歌单 2 首）；轻音乐（原歌单 1 首）"
+            }
+          ]
+        },
+        "graph": {
+          "distinct_artists": 9,
+          "graph_paths": 10,
+          "multi_hop_paths": 7,
+          "similar_artist_paths": 5,
+          "songs": [
+            {
+              "song_id": "catalog:0b5dbd03a965a76cbcc7593e",
+              "song_name": "Spiral",
+              "artist": "John Coltrane",
+              "genres": "爵士",
+              "reason": "匹配歌单艺人；共享曲风：爵士；图关系：John Coltrane → Spiral",
+              "score": 66.9
+            },
+            {
+              "song_id": "0s7LZdfEIdXJPNLfNsKQXF",
+              "song_name": "Away In A Manger",
+              "artist": "Dave Brubeck",
+              "genres": "爵士|轻音乐",
+              "reason": "共享曲风：爵士、轻音乐；图关系：Bill Evans → Dave Brubeck → 《Away In A Manger》（相似艺人）",
+              "score": 75.0
+            },
+            {
+              "song_id": "catalog:0e426926d0daf105e51ea8b2",
+              "song_name": "Portia",
+              "artist": "Miles Davis",
+              "genres": "流行|爵士",
+              "reason": "匹配歌单艺人；共享曲风：爵士；图关系：Miles Davis → Portia",
+              "score": 66.8
+            },
+            {
+              "song_id": "catalog:4dd6d3e080491315317e7f2c",
+              "song_name": "Country Son (Rhythm Section Rehearsal)",
+              "artist": "Miles Davis",
+              "genres": "爵士",
+              "reason": "匹配歌单艺人；共享曲风：爵士；图关系：Miles Davis → Country Son (Rhythm Section Rehearsal)",
+              "score": 66.8
+            },
+            {
+              "song_id": "catalog:4091cbf8d9b71d56e3ccd5ce",
+              "song_name": "You're Lonely and I'm Lonely (From \"Louisiana Purchase\")",
+              "artist": "Frank Sinatra & Tommy Dorsey",
+              "genres": "爵士",
+              "reason": "共享曲风：爵士；图关系：John Coltrane → Frank Sinatra & Tommy Dorsey → 《You're Lonely and I'm Lonely (From \"Louisiana Purchase\")》（相似艺人）",
+              "score": 64.2
+            },
+            {
+              "song_id": "catalog:3d2f7b414944c325c02f84ad",
+              "song_name": "Caravan",
+              "artist": "Duke Ellington, Harry Carney, Duke Ellington Small Band & Åke Persson",
+              "genres": "爵士",
+              "reason": "共享曲风：爵士；图关系：《Blue Train》 → 爵士 → Caravan",
+              "score": 67.0
+            },
+            {
+              "song_id": "catalog:6b7fd6b3dde132ea885743bd",
+              "song_name": "Autumn Leaves",
+              "artist": "Nat \"King\" Cole",
+              "genres": "流行|爵士|轻音乐",
+              "reason": "共享曲风：爵士、轻音乐；图关系：《Blue Train》 → 爵士 → Autumn Leaves",
+              "score": 63.3
+            },
+            {
+              "song_id": "catalog:d919f8864e375a0796931008",
+              "song_name": "I Love Paris (Take 2 / Alternate)",
+              "artist": "Charlie Parker",
+              "genres": "爵士",
+              "reason": "共享曲风：爵士；图关系：Miles Davis → Charlie Parker → 《I Love Paris (Take 2 / Alternate)》（相似艺人）",
+              "score": 63.8
+            },
+            {
+              "song_id": "catalog:5153a2e199dab8404f21184f",
+              "song_name": "Like a Mighty Rose",
+              "artist": "Vince Guaraldi Trio",
+              "genres": "爵士",
+              "reason": "共享曲风：爵士；图关系：Miles Davis → Vince Guaraldi Trio → 《Like a Mighty Rose》（相似艺人）",
+              "score": 63.3
+            },
+            {
+              "song_id": "catalog:54ed9f8bbf462ce22f10a6fa",
+              "song_name": "It Could Happen to You",
+              "artist": "Diana Krall",
+              "genres": "爵士",
+              "reason": "共享曲风：爵士；图关系：Miles Davis → Diana Krall → 《It Could Happen to You》（相似艺人）",
+              "score": 63.0
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

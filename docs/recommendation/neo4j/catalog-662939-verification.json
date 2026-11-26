@@ -1,0 +1,21 @@
+{
+  "info": {
+    "schema": "3",
+    "source_sha256": "d81cbdba47d18a2329b9f6a6e40602e41ad2ebb0f6f652ef1eecc739e63cd61d",
+    "backend": "Neo4j GDS 2.13.12",
+    "song_count": "662939"
+  },
+  "counts": {
+    "tracks": 662939,
+    "features": 589576,
+    "neighbors": 30800,
+    "artist_routes": 214689
+  },
+  "content_only_excluded": 1442,
+  "pending_titles_excluded": 4,
+  "native_probe_results": 10,
+  "sample_playlist": "/playlists/1",
+  "web_graph_recommendation": "passed",
+  "gds_graph_nodes": 743878,
+  "gds_graph_relationships": 2212466
+}

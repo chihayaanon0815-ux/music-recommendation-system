@@ -192,7 +192,8 @@ def build(graph, path, *, uri=None, artist_limit=120, probe=None):
                 for genre in song["genres"]:
                     direct[f"g:{genre}"].append((song["id"], song["weight"]))
             db.executemany("INSERT INTO tracks VALUES (?, ?, ?, ?, ?)", (
-                (song["id"], normalize(song["artist"]), "|".join(song["genres"]), song["weight"], song["duplicate"])
+                (song["id"], normalize(song["artist"]) if song.get("recommendable", True) else "",
+                 "|".join(song["genres"]), song["weight"], song["duplicate"])
                 for song in graph["tracks"]
             ))
             db.executemany("INSERT INTO features VALUES (?, ?, ?)", (
@@ -236,7 +237,7 @@ def build(graph, path, *, uri=None, artist_limit=120, probe=None):
                 "seed_ids": [seed[2:] for seed in seeds],
                 "songs": [
                     {"song_id": key[2:], "name": nodes[key][1], "score": score}
-                    for key, score in recommendations.items() if key not in seeds
+                    for key, score in recommendations.items() if key not in seeds and key in eligible
                 ][:10],
             }, ensure_ascii=False, indent=2), encoding="utf-8")
     finally:

@@ -54,3 +54,7 @@ python graph_recommendation/build_index.py graph-data/graph.json data/processed/
 图推荐会为同时具备相似艺人边和歌单风格证据的候选留出探索位置。理由显示「歌单艺人 → 相似艺人 → 推荐曲目」。曲风候选可以显示「种子曲目 → 共享曲风 → 推荐曲目」，每一段都对应已有的图关系。相同三组歌单的复测报告见 `outputs/Neo4j-GDS-修复后回归.json`。
 
 [发布验收](发布验收.md) · [分阶段对照汇总](graph-regression-metrics.json)
+
+## 当前曲库版本
+
+[662,939 首曲库的构建步骤与验收结果](catalog-662939.md)。

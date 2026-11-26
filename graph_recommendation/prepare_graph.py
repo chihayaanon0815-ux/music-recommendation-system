@@ -2,6 +2,7 @@
 
 import argparse
 import csv
+import gzip
 import hashlib
 import heapq
 import json
@@ -16,7 +17,8 @@ from recommender.track_content import is_recommendable_track
 
 
 def rows(path):
-    with path.open(encoding="utf-8-sig", newline="") as file:
+    opener = gzip.open if path.suffix == ".gz" else open
+    with opener(path, "rt", encoding="utf-8-sig", newline="") as file:
         yield from csv.DictReader(file)
 
 
@@ -48,15 +50,32 @@ def stable_order(song_id):
     return hashlib.blake2b(song_id.encode(), digest_size=8).digest()
 
 
-def load_tracks(directory, genres_file, sample_size=None, label_details=None):
+EVIDENCE_WEIGHTS = {
+    "track_consensus": 1.0, "track_source": 0.8, "track_conflict": 0.45,
+    "artist_catalog_majority": 0.5, "artist_extended_catalog_majority": 0.35,
+    "artist_external_genre": 0.35, "unresolved": 0.0, "content_only": 0.0,
+}
+
+
+def load_tracks(directory, genres_file, sample_size=None, label_details=None, genre_evidence=None, review_policies=None):
+    policy_dir = review_policies if review_policies is not None else directory
     weights = {
         row["song_id"]: float(row["suggested_genre_weight"])
-        for row in rows(directory / "genre_ranking_policy.csv")
+        for row in rows(policy_dir / "genre_ranking_policy.csv")
     }
-    excluded = {row["song_id"] for row in rows(directory / "exclude_from_genre_ranking.csv")}
+    excluded = {row["song_id"] for row in rows(policy_dir / "exclude_from_genre_ranking.csv")}
     duplicates = {
-        row["song_id"]: row["group_id"] for row in rows(directory / "duplicate_review.csv")
+        row["song_id"]: row["group_id"] for row in rows(policy_dir / "duplicate_review.csv")
     }
+    methods = {}
+    if genre_evidence:
+        for row in rows(genre_evidence):
+            sid, method = row["song_id"], row["method"]
+            if method == "existing_genre_detail":
+                continue
+            if sid in methods or method not in EVIDENCE_WEIGHTS:
+                raise ValueError(f"Unexpected genre evidence for {sid}: {method}")
+            methods[sid] = method
     styles = {row["genre"] for row in rows(genres_file) if row["genre"] != "风格待确认"}
     regional_pop = {"华语流行", "粤语流行", "日韩流行", "日语流行", "韩语流行", "台语流行"}
     detail_styles = {}
@@ -72,15 +91,24 @@ def load_tracks(directory, genres_file, sample_size=None, label_details=None):
         if not sid or not row["song_name"] or sid in seen:
             raise ValueError(f"Invalid or repeated song ID: {sid}")
         seen.add(sid)
-        weight = 0.0 if sid in excluded else weights.get(sid, 1.0)
+        method = methods.get(sid)
+        recommendable = (
+            method != "content_only" and not row["song_name"].startswith("〔待确认歌名〕")
+            and is_recommendable_track(row["song_name"], row["genres"], sid)
+        )
+        weight = min(weights.get(sid, 1.0), EVIDENCE_WEIGHTS.get(method, 1.0))
+        if sid in excluded or not recommendable:
+            weight = 0.0
         genres = set(row["genres"].split("|")) & styles if weight else set()
         if "流行" in genres and weight == 1.0:
             genres |= detail_styles.get(sid, set())
         tracks.append({
             "id": sid, "name": row["song_name"], "artist": artist_name(row["artist"]),
             "genres": sorted(genres), "weight": weight, "duplicate": duplicates.get(sid, ""),
-            "recommendable": is_recommendable_track(row["song_name"], row["genres"], sid),
+            "recommendable": recommendable,
         })
+    if methods.keys() - seen:
+        raise ValueError("Genre evidence references songs outside the catalog")
     if sample_size and sample_size < len(tracks):
         strata = defaultdict(list)
         for song in tracks:
@@ -188,10 +216,13 @@ def main():
     parser.add_argument("output", type=Path)
     parser.add_argument("--sample-size", default=0, type=int)
     parser.add_argument("--label-details", type=Path)
+    parser.add_argument("--genre-evidence", type=Path)
+    parser.add_argument("--review-policies", type=Path, help="directory containing the catalog review policy CSVs")
     args = parser.parse_args()
     if args.sample_size < 0:
         parser.error("--sample-size must be nonnegative")
-    tracks = load_tracks(args.catalog, args.genres, args.sample_size, args.label_details)
+    tracks = load_tracks(args.catalog, args.genres, args.sample_size, args.label_details,
+                         args.genre_evidence, args.review_policies)
     nodes, edges, _, _ = prepare(tracks)
     args.output.mkdir(parents=True, exist_ok=True)
     with (args.catalog / "songs.csv").open("rb") as file:
