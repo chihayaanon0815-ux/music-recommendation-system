@@ -73,3 +73,54 @@ python -m pytest tests/web -q
 ```
 
 四项都通过，且页面算法标签显示“推荐算法模块”，才算联调完成。只通过 1–3 而页面仍显示模拟算法，问题在导入路径或打包收集，不在算法本身。
+
+## 7. v2 接入（可选，默认关闭）
+
+v2 不是替换，而是**并列的第二套策略**。v1 的函数签名、默认行为、六字段输出全部保留，C 的页面不改也能继续跑。
+
+### 7.1 最小改法（不动模板）
+
+```python
+from recommender.recommend import recommend
+results = recommend(songs, preferences, limit=10, strategy="v2")
+```
+
+只把这一行的 `strategy` 换成 `"v2"` 即可；返回字段仍是 `song_id, song_name, artist, genres, score, reason`，只是 `score` 变成两位小数。
+
+### 7.2 推荐改法（启动时建索引）
+
+```python
+from recommender.recommend_v2 import build_index, recommend_v2
+
+INDEX = build_index(songs)          # 8.9 万首约 0.31 s，放在 app 启动处
+...
+results = recommend_v2(songs, preferences, limit=10, index=INDEX, exclude_ids=heard_ids)
+```
+
+单次请求从 0.59 s 降到 0.19 s。`songs` 每次传入同一份即可；若曲库被重载，需要重建 `INDEX`。
+
+### 7.3 歌单页
+
+```python
+from recommender.recommend_v2 import recommend_from_seeds
+results = recommend_from_seeds(catalog, seeds, limit=10, index=INDEX)
+```
+
+与 `playlist.py` 的 `recommend_playlist` 口径一致（优先同歌手），并额外支持 `diversity` 与 `exclude_ids`。
+
+### 7.4 注意
+
+| 事项 | 说明 |
+| --- | --- |
+| `score` 类型 | v2 是 float（两位小数），模板若格式化成整数需改 `"{:.1f}"` |
+| 空结果 | v2 同样返回 `[]`，语义不变，页面仍要显示“没有匹配”，不要回退默认 |
+| 多样性 | `diversity=0` 即纯分数排序，与 v2-div0 评估一致；上线默认 0.3 |
+| 打包 | 新增 `recommend_v2.py`、`similarity.py` 都在 `recommender/` 内，`--collect-submodules recommender` 已能覆盖 |
+| 回退 | 若 v2 导入失败，`strategy="v2"` 会抛异常；页面应 try/except 后回落 v1，而不是显示空结果 |
+
+### 7.5 建议的上线顺序
+
+1. 先用环境变量切 v2（如 `RECOMMENDER_STRATEGY=v2`），默认仍是 v1；
+2. 页面上标注当前策略，方便验收时核对；
+3. 对照 `docs/recommendation/eval_report_v2.md` 的三张表确认数字一致；
+4. 稳定后再决定是否把默认改成 v2。

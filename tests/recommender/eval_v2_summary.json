@@ -1,0 +1,168 @@
+{
+  "catalogue": 89740,
+  "k": 10,
+  "preference_queries": [
+    {
+      "genre": "电子",
+      "pool": 15556,
+      "holdout": 15526
+    },
+    {
+      "genre": "世界音乐",
+      "pool": 14486,
+      "holdout": 14456
+    },
+    {
+      "genre": "摇滚",
+      "pool": 11784,
+      "holdout": 11754
+    },
+    {
+      "genre": "流行",
+      "pool": 9715,
+      "holdout": 9685
+    },
+    {
+      "genre": "金属",
+      "pool": 5624,
+      "holdout": 5594
+    },
+    {
+      "genre": "拉丁",
+      "pool": 4631,
+      "holdout": 4601
+    },
+    {
+      "genre": "日韩流行",
+      "pool": 3954,
+      "holdout": 3924
+    },
+    {
+      "genre": "雷鬼",
+      "pool": 3954,
+      "holdout": 3924
+    },
+    {
+      "genre": "轻音乐",
+      "pool": 3830,
+      "holdout": 3800
+    },
+    {
+      "genre": "节奏布鲁斯",
+      "pool": 2985,
+      "holdout": 2955
+    }
+  ],
+  "preference_results": [
+    {
+      "strategy": "v1",
+      "precision_at_k": 0.9,
+      "recall_at_k": 0.0016,
+      "ndcg_at_k": 0.7799,
+      "hit_rate_at_k": 1.0,
+      "intra_list_diversity": 0.2837,
+      "coverage": 0.00099,
+      "distinct_artists_per_query": 9.9,
+      "queries": 10,
+      "k": 10
+    },
+    {
+      "strategy": "v2",
+      "precision_at_k": 0.99,
+      "recall_at_k": 0.0018,
+      "ndcg_at_k": 0.9936,
+      "hit_rate_at_k": 1.0,
+      "intra_list_diversity": 0.6115,
+      "coverage": 0.00078,
+      "distinct_artists_per_query": 8.9,
+      "queries": 10,
+      "k": 10
+    },
+    {
+      "strategy": "v2-div0",
+      "precision_at_k": 0.98,
+      "recall_at_k": 0.0018,
+      "ndcg_at_k": 0.9845,
+      "hit_rate_at_k": 1.0,
+      "intra_list_diversity": 0.4577,
+      "coverage": 0.00095,
+      "distinct_artists_per_query": 5.3,
+      "queries": 10,
+      "k": 10
+    }
+  ],
+  "artist_queries": [
+    {
+      "artist": "George Jones",
+      "pool": 260,
+      "holdout": 252
+    },
+    {
+      "artist": "my little airport",
+      "pool": 171,
+      "holdout": 163
+    },
+    {
+      "artist": "The Beatles",
+      "pool": 149,
+      "holdout": 141
+    },
+    {
+      "artist": "BTS",
+      "pool": 143,
+      "holdout": 135
+    },
+    {
+      "artist": "Håkan Hellström",
+      "pool": 141,
+      "holdout": 133
+    },
+    {
+      "artist": "Glee Cast",
+      "pool": 139,
+      "holdout": 131
+    },
+    {
+      "artist": "Hank Williams",
+      "pool": 136,
+      "holdout": 128
+    },
+    {
+      "artist": "Linkin Park",
+      "pool": 133,
+      "holdout": 125
+    }
+  ],
+  "artist_results": [
+    {
+      "strategy": "playlist-v1",
+      "precision_at_k": 1.0,
+      "recall_at_k": 0.0695,
+      "ndcg_at_k": 1.0,
+      "queries": 8,
+      "k": 10
+    },
+    {
+      "strategy": "playlist-v2",
+      "precision_at_k": 1.0,
+      "recall_at_k": 0.0695,
+      "ndcg_at_k": 1.0,
+      "queries": 8,
+      "k": 10
+    }
+  ],
+  "cold_start": [
+    {
+      "strategy": "v1-default",
+      "genres": "电子/世界音乐/摇滚",
+      "precision_at_k": 0.3,
+      "relevant_pool": 40635
+    },
+    {
+      "strategy": "v2-default",
+      "genres": "电子/世界音乐/摇滚",
+      "precision_at_k": 1.0,
+      "relevant_pool": 40635
+    }
+  ]
+}

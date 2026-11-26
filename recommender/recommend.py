@@ -61,7 +61,7 @@ def _build_reason(matched_genres, artist_matched):
     return "；".join(parts)
 
 
-def recommend(songs, preferences, limit=DEFAULT_LIMIT):
+def recommend(songs, preferences, limit=DEFAULT_LIMIT, strategy="v1"):
     """Rank songs against the user's genre and artist preferences.
 
     Parameters
@@ -73,6 +73,10 @@ def recommend(songs, preferences, limit=DEFAULT_LIMIT):
         {"genres": [...], "artists": [...]}; missing keys mean no selection.
     limit : int
         Maximum number of results. A non-positive limit returns [].
+    strategy : str
+        "v1" (default) keeps the exact contract behaviour documented above.
+        "v2" routes to recommender.recommend_v2: soft genre coverage, a
+        bounded popularity prior, diversity reranking and richer reasons.
 
     Returns
     -------
@@ -80,6 +84,12 @@ def recommend(songs, preferences, limit=DEFAULT_LIMIT):
         New dictionaries with song_id, song_name, artist, genres, score and
         a non-empty reason. Input objects are never modified.
     """
+    if strategy not in ("v1", "v2"):
+        raise ValueError("strategy must be 'v1' or 'v2'")
+    if strategy == "v2":
+        from .recommend_v2 import recommend_v2
+
+        return recommend_v2(songs, preferences, limit)
     if preferences is None:
         preferences = {}
     if not isinstance(preferences, dict):
