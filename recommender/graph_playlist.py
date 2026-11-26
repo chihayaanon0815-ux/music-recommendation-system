@@ -74,7 +74,7 @@ def score_candidates(db, weights, artist_paths):
             relevance[row["track"]] += score
             if score > reasons.get(row["track"], (0, ""))[0]:
                 reasons[row["track"]] = score, row["reason"], seed
-    if not relevance and not artist_paths:
+    if not direct_seeds and not relevance and not artist_paths:
         return {}, {}, {}
     direct_max = sum(weights.values())
     graph_max = max(relevance.values(), default=1)

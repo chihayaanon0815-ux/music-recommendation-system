@@ -35,6 +35,7 @@ class GraphPlaylistTests(unittest.TestCase):
             ("b2", "Song B2", "Second artist", ["爵士"], 1, "duplicate"),
             ("c", "Song C", "Third artist", ["爵士"], 1, ""),
             ("zero", "No style evidence", "Unrelated", [], 0, ""),
+            ("zero-peer", "Another song by the same artist", "Unrelated", [], 0, ""),
             ("spoken-title", "Commentary: Wayne Shorter", "First artist", ["爵士"], 1, ""),
             ("spoken-label", "A Conversation", "First artist", ["爵士", "朗读与访谈"], 1, ""),
         ]
@@ -84,6 +85,24 @@ class GraphPlaylistTests(unittest.TestCase):
             ids = {row[0] for row in db.execute("SELECT song_id FROM items WHERE playlist_id=3")}
         self.assertEqual(len(ids & {"b1", "b2"}), 1)
         self.assertEqual(ids - {"b1", "b2"}, {"c"})
+
+    def test_direct_artist_candidates_without_genre_or_graph_paths(self):
+        with closing(sqlite3.connect(self.index)) as db, db:
+            db.execute("DELETE FROM neighbors WHERE seed='a:unrelated'")
+            self.assertIsNone(db.execute("SELECT 1 FROM artist_routes WHERE seed='a:unrelated'").fetchone())
+        with closing(connect(self.user_db)) as db, db:
+            db.execute("UPDATE items SET song_id='zero', song_name='No style evidence', "
+                       "artist='Unrelated', genres='' WHERE playlist_id=1")
+
+        graph = self.generate("graph")
+
+        self.assertIn("种子歌单 · 图推荐", graph)
+        self.assertIn("Another song by the same artist", graph)
+        self.assertIn("匹配歌单艺人", graph)
+        self.assertNotIn("本次使用经典推荐", graph)
+        with closing(sqlite3.connect(self.user_db)) as db:
+            songs = db.execute("SELECT song_id FROM items WHERE playlist_id=2").fetchall()
+        self.assertEqual(songs, [("zero-peer",)])
 
     def test_catalog_mismatch_falls_back(self):
         with self.songs.open("a", encoding="utf-8") as file:
