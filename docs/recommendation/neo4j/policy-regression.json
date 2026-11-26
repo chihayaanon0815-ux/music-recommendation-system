@@ -1,0 +1,11 @@
+{
+  "catalog_songs": 293864,
+  "index_backend": "Neo4j GDS 2.13.12",
+  "reviewed_tracks": 85,
+  "blocked_tracks": 72,
+  "clean_recording_mappings": 5,
+  "home_artist_cases": 45,
+  "playlist_cases": 38,
+  "playlist_graph_cases_with_results": 38,
+  "blocked_tracks_in_recommendations": 0
+}

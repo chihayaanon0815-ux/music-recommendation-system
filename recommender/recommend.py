@@ -9,6 +9,8 @@ by the offline Flask page and packaged for a Windows machine without Python
 or Java. See docs/recommendation/algorithm_spec.md for the full specification.
 """
 
+from recommender.track_content import is_recommendable_track
+
 DEFAULT_LIMIT = 10
 GENRE_WEIGHT = 3
 ARTIST_WEIGHT = 2
@@ -119,6 +121,9 @@ def recommend(songs, preferences, limit=DEFAULT_LIMIT):
         else:
             score = 0
             reason = DEFAULT_REASON
+
+        if not is_recommendable_track(song_name, song_genres, song_id):
+            continue
 
         results.append({
             "song_id": _text(song.get("song_id")),

@@ -1,0 +1,478 @@
+{
+  "source": "artist_similarity.db (Echo Nest artist similarity, 2,201,916 edges, 44,460 targets)",
+  "catalog_artists": 30543,
+  "catalog_artists_with_neighbors": 30493,
+  "coverage_pct": 99.84,
+  "edges_for_catalog": 1669104,
+  "neighbors_mean": 54.74,
+  "neighbors_median": 57,
+  "neighbors_max": 97,
+  "neighbors_min": 1,
+  "similar_in_catalog_pct": 87.72,
+  "no_distance_column": true,
+  "note": "similarity 表只有 target/similar 两列，没有相似度分数与排名；边是无权邻居集合，使用时不能把顺序当相似度",
+  "top_artist_examples": [
+    {
+      "artist_id": "ARJ7KF01187B98D717",
+      "artist": "Coldplay",
+      "plays": 1005262,
+      "neighbor_count": 73,
+      "top_neighbors": [
+        {
+          "artist_id": "ARC8CQZ1187B98DECA",
+          "artist": "Jack Johnson",
+          "plays": 625611
+        },
+        {
+          "artist_id": "AR73S4G1187B9A03C2",
+          "artist": "OneRepublic",
+          "plays": 528182
+        },
+        {
+          "artist_id": "ARH6W4X1187B99274F",
+          "artist": "Radiohead",
+          "plays": 501571
+        },
+        {
+          "artist_id": "ARVG4OK1187B9B6BD3",
+          "artist": "The Killers",
+          "plays": 500035
+        },
+        {
+          "artist_id": "AR633SY1187B9AC3B9",
+          "artist": "Weezer",
+          "plays": 238159
+        }
+      ]
+    },
+    {
+      "artist_id": "ARF2EHS1187B994F4E",
+      "artist": "Kings Of Leon",
+      "plays": 914104,
+      "neighbor_count": 85,
+      "top_neighbors": [
+        {
+          "artist_id": "ARJ7KF01187B98D717",
+          "artist": "Coldplay",
+          "plays": 1005262
+        },
+        {
+          "artist_id": "ARS8GNX1187B9B5141",
+          "artist": "The Black Keys",
+          "plays": 701610
+        },
+        {
+          "artist_id": "ARVG4OK1187B9B6BD3",
+          "artist": "The Killers",
+          "plays": 500035
+        },
+        {
+          "artist_id": "ARSAIUN1187FB398D3",
+          "artist": "Creedence Clearwater Revival",
+          "plays": 325980
+        },
+        {
+          "artist_id": "AR6XPWV1187B9ADAEB",
+          "artist": "Foo Fighters",
+          "plays": 273132
+        }
+      ]
+    },
+    {
+      "artist_id": "ARNCHOP121318C56B8",
+      "artist": "Florence + The Machine",
+      "plays": 777912,
+      "neighbor_count": 75,
+      "top_neighbors": [
+        {
+          "artist_id": "ARWD25M1187FB4C563",
+          "artist": "Amy Winehouse",
+          "plays": 257517
+        },
+        {
+          "artist_id": "AR2ZPMX1187FB4E4B6",
+          "artist": "Vampire Weekend",
+          "plays": 252958
+        },
+        {
+          "artist_id": "ARKZJ301187FB521B2",
+          "artist": "Lily Allen",
+          "plays": 242181
+        },
+        {
+          "artist_id": "ARYJSHW1187FB407A3",
+          "artist": "Phoenix",
+          "plays": 237626
+        },
+        {
+          "artist_id": "ARL93GT1187B9A1057",
+          "artist": "Metric",
+          "plays": 219422
+        }
+      ]
+    },
+    {
+      "artist_id": "AR5E44Z1187B9A1D74",
+      "artist": "Dwight Yoakam",
+      "plays": 733802,
+      "neighbor_count": 73,
+      "top_neighbors": [
+        {
+          "artist_id": "ARRRVMG1187FB532AC",
+          "artist": "Radney Foster",
+          "plays": 107773
+        },
+        {
+          "artist_id": "ARHRC7V1187FB4D274",
+          "artist": "Gary Allan",
+          "plays": 62582
+        },
+        {
+          "artist_id": "ARYYGRP1187B9A4719",
+          "artist": "Travis Tritt",
+          "plays": 36168
+        },
+        {
+          "artist_id": "ARAPH9U1187B9B34F0",
+          "artist": "Randy Travis",
+          "plays": 20047
+        },
+        {
+          "artist_id": "ARKVAFC1187B98A869",
+          "artist": "Marty Stuart",
+          "plays": 16996
+        }
+      ]
+    },
+    {
+      "artist_id": "ARAOQ5T1187FB435AB",
+      "artist": "Björk",
+      "plays": 725478,
+      "neighbor_count": 76,
+      "top_neighbors": [
+        {
+          "artist_id": "ARH6W4X1187B99274F",
+          "artist": "Radiohead",
+          "plays": 501571
+        },
+        {
+          "artist_id": "AR6NYHH1187B9BA128",
+          "artist": "Yeah Yeah Yeahs",
+          "plays": 152496
+        },
+        {
+          "artist_id": "ARNF13I1187FB562A5",
+          "artist": "Massive Attack",
+          "plays": 129916
+        },
+        {
+          "artist_id": "ARH5FJJ1187FB3F787",
+          "artist": "Alanis Morissette",
+          "plays": 121142
+        },
+        {
+          "artist_id": "ARZZ5ZR1187FB4D149",
+          "artist": "Air",
+          "plays": 109772
+        }
+      ]
+    },
+    {
+      "artist_id": "ARS8GNX1187B9B5141",
+      "artist": "The Black Keys",
+      "plays": 701610,
+      "neighbor_count": 76,
+      "top_neighbors": [
+        {
+          "artist_id": "ARF2EHS1187B994F4E",
+          "artist": "Kings Of Leon",
+          "plays": 914104
+        },
+        {
+          "artist_id": "AR8V1WA1187B9AD9E9",
+          "artist": "The White Stripes",
+          "plays": 168084
+        },
+        {
+          "artist_id": "ARBLDRW1187B9A05A1",
+          "artist": "The Kills",
+          "plays": 117072
+        },
+        {
+          "artist_id": "AR6G4V01187B9AD086",
+          "artist": "Queens Of The Stone Age",
+          "plays": 99781
+        },
+        {
+          "artist_id": "ARDF8K01187FB37200",
+          "artist": "Wolfmother",
+          "plays": 72412
+        }
+      ]
+    },
+    {
+      "artist_id": "ARTH9041187FB43E1F",
+      "artist": "Eminem",
+      "plays": 686449,
+      "neighbor_count": 44,
+      "top_neighbors": [
+        {
+          "artist_id": "ARRH63Y1187FB47783",
+          "artist": "Kanye West",
+          "plays": 329528
+        },
+        {
+          "artist_id": "ARSZ6MA1187FB43D29",
+          "artist": "The Notorious B.I.G.",
+          "plays": 167730
+        },
+        {
+          "artist_id": "ARKQQZA12086C116FC",
+          "artist": "B.o.B",
+          "plays": 93523
+        },
+        {
+          "artist_id": "AROSI8L1187B9ACD43",
+          "artist": "Ice Cube",
+          "plays": 90507
+        },
+        {
+          "artist_id": "ARCGJ6U1187FB4D01F",
+          "artist": "Akon",
+          "plays": 88571
+        }
+      ]
+    },
+    {
+      "artist_id": "ARC8CQZ1187B98DECA",
+      "artist": "Jack Johnson",
+      "plays": 625611,
+      "neighbor_count": 57,
+      "top_neighbors": [
+        {
+          "artist_id": "ARZENOX1187B98A645",
+          "artist": "John Mayer",
+          "plays": 434215
+        },
+        {
+          "artist_id": "ARML3X41187FB35F2E",
+          "artist": "Jason Mraz & Colbie Caillat",
+          "plays": 287752
+        },
+        {
+          "artist_id": "ARAGS2Z1187B9BA436",
+          "artist": "Natiruts",
+          "plays": 130907
+        },
+        {
+          "artist_id": "ARQXC7V1187FB4DA9E",
+          "artist": "DAVE MATTHEWS BAND",
+          "plays": 106845
+        },
+        {
+          "artist_id": "AR478R21187FB42BC4",
+          "artist": "Zac Brown Band",
+          "plays": 87466
+        }
+      ]
+    },
+    {
+      "artist_id": "ARFCWSZ123526A0AFD",
+      "artist": "Justin Bieber",
+      "plays": 617619,
+      "neighbor_count": 53,
+      "top_neighbors": [
+        {
+          "artist_id": "AR0IVTL1187B9AD520",
+          "artist": "Harmonia",
+          "plays": 570951
+        },
+        {
+          "artist_id": "ARS54I31187FB46721",
+          "artist": "Taylor Swift",
+          "plays": 441111
+        },
+        {
+          "artist_id": "AR0WLH6119B8669027",
+          "artist": "Charttraxx Karaoke",
+          "plays": 360965
+        },
+        {
+          "artist_id": "ARPDVPJ1187B9ADBE9",
+          "artist": "Usher featuring will.i.am",
+          "plays": 331166
+        },
+        {
+          "artist_id": "ARKU3Z61187FB51DCA",
+          "artist": "Rihanna",
+          "plays": 297269
+        }
+      ]
+    },
+    {
+      "artist_id": "AR0IVTL1187B9AD520",
+      "artist": "Harmonia",
+      "plays": 570951,
+      "neighbor_count": 75,
+      "top_neighbors": [
+        {
+          "artist_id": "ARS54I31187FB46721",
+          "artist": "Taylor Swift",
+          "plays": 441111
+        },
+        {
+          "artist_id": "ARX6TAQ11C8A415850",
+          "artist": "Lady GaGa",
+          "plays": 372046
+        },
+        {
+          "artist_id": "ARKU3Z61187FB51DCA",
+          "artist": "Rihanna",
+          "plays": 297269
+        },
+        {
+          "artist_id": "ARWD25M1187FB4C563",
+          "artist": "Amy Winehouse",
+          "plays": 257517
+        },
+        {
+          "artist_id": "AR4OU721187FB4549D",
+          "artist": "Paramore",
+          "plays": 253552
+        }
+      ]
+    }
+  ],
+  "user_recommendation_demo": [
+    {
+      "user_id": "440e46052675072fab65e4646d78f9b7d51dc183",
+      "history_songs": 31,
+      "top_owned_artists": [
+        "Pixie Lott",
+        "Jamie Cullum",
+        "Rufus Wainwright",
+        "Harmonia",
+        "José Gonzalez"
+      ],
+      "demo_recommendations": [
+        {
+          "artist": "Lily Allen",
+          "title": "Smile",
+          "plays": 24883,
+          "via_artists": 3
+        },
+        {
+          "artist": "Nick Drake",
+          "title": "Pink Moon",
+          "plays": 5613,
+          "via_artists": 3
+        },
+        {
+          "artist": "Lady GaGa",
+          "title": "Alejandro",
+          "plays": 111615,
+          "via_artists": 2
+        },
+        {
+          "artist": "Taylor Swift",
+          "title": "Love Story",
+          "plays": 89589,
+          "via_artists": 2
+        },
+        {
+          "artist": "Miley Cyrus",
+          "title": "Party In The U.S.A.",
+          "plays": 78443,
+          "via_artists": 2
+        }
+      ]
+    },
+    {
+      "user_id": "0733c1d02ffa224fc62738ecad12c317003db102",
+      "history_songs": 36,
+      "top_owned_artists": [
+        "Bell X1",
+        "Florence + The Machine",
+        "Kings Of Leon",
+        "Creedence Clearwater Revival",
+        "High School Musical Cast"
+      ],
+      "demo_recommendations": [
+        {
+          "artist": "The White Stripes",
+          "title": "Seven Nation Army (Album Version)",
+          "plays": 70470,
+          "via_artists": 2
+        },
+        {
+          "artist": "Vampire Weekend",
+          "title": "A-Punk (Album)",
+          "plays": 43640,
+          "via_artists": 2
+        },
+        {
+          "artist": "Yeah Yeah Yeahs",
+          "title": "Heads Will Roll",
+          "plays": 43255,
+          "via_artists": 2
+        },
+        {
+          "artist": "Snow Patrol",
+          "title": "Chasing Cars",
+          "plays": 33278,
+          "via_artists": 2
+        },
+        {
+          "artist": "The Rolling Stones",
+          "title": "Angie",
+          "plays": 29754,
+          "via_artists": 2
+        }
+      ]
+    },
+    {
+      "user_id": "1a5a3a8e724353c08aee993b4a19d39c32b65098",
+      "history_songs": 77,
+      "top_owned_artists": [
+        "The Click Five",
+        "Modest Mouse",
+        "Silversun Pickups",
+        "JET",
+        "Daft Punk"
+      ],
+      "demo_recommendations": [
+        {
+          "artist": "Death Cab for Cutie",
+          "title": "I Will Follow You into the Dark (Album Version)",
+          "plays": 39465,
+          "via_artists": 3
+        },
+        {
+          "artist": "The Bravery",
+          "title": "Time Won't Let Me Go",
+          "plays": 6550,
+          "via_artists": 3
+        },
+        {
+          "artist": "Band Of Horses",
+          "title": "The Funeral (Album Version)",
+          "plays": 67403,
+          "via_artists": 2
+        },
+        {
+          "artist": "Cage The Elephant",
+          "title": "Ain't No Rest For The Wicked (Original Version)",
+          "plays": 64264,
+          "via_artists": 2
+        },
+        {
+          "artist": "The Postal Service",
+          "title": "Such Great Heights",
+          "plays": 58059,
+          "via_artists": 2
+        }
+      ]
+    }
+  ],
+  "elapsed_seconds": 31.8
+}

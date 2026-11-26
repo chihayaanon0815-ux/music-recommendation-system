@@ -1,0 +1,43 @@
+{
+  "tracks": 293864,
+  "stratum_populations": {
+    "曲名与标签模型": 27106,
+    "已有曲目或目录标签": 231832,
+    "非音乐内容": 2925,
+    "全库分布兜底": 724,
+    "艺人风格推断": 31277
+  },
+  "sample_counts": {
+    "全库分布兜底": {
+      "与参考标签一致": 1,
+      "无法核验": 6
+    },
+    "已有曲目或目录标签": {
+      "无法核验": 3,
+      "与参考标签一致": 8,
+      "参考标签分歧": 1
+    },
+    "曲名与标签模型": {
+      "与参考标签不一致": 1,
+      "无法核验": 11
+    },
+    "艺人风格推断": {
+      "无法核验": 12
+    }
+  },
+  "cross_platform": {
+    "both_tagged": 1230,
+    "some_common_genre": 913,
+    "disjoint": 317
+  },
+  "duplicate_rows_for_review": 0,
+  "exclude_from_genre_ranking": 723,
+  "estimates_supported_by_track_evidence": 107,
+  "changed_genres": 32,
+  "ranking_weight_counts": {
+    "0.5": 31198,
+    "0.25": 27396,
+    "1": 107,
+    "0": 723
+  }
+}

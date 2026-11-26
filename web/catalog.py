@@ -9,6 +9,8 @@ from threading import Lock
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
 
+from web.catalog_snapshot import catalog_paths
+
 
 FIELDS = ('song_id', 'song_name', 'artist', 'genres')
 MBID = re.compile(r'[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}')
@@ -46,8 +48,9 @@ def connect(path):
 
 
 def sync_catalog(db, path):
-    stat = path.stat()
-    fingerprint = f'{path.resolve()}:{stat.st_size}:{stat.st_mtime_ns}'
+    parts = catalog_paths(path)
+    fingerprint = json.dumps([(str(item.resolve()), s.st_size, s.st_mtime_ns)
+                              for item in parts for s in (item.stat(),)])
     sql = "SELECT value FROM metadata WHERE name = 'catalog_csv'"
     row = db.execute(sql).fetchone()
     if row and row['value'] == fingerprint:
@@ -58,16 +61,17 @@ def sync_catalog(db, path):
         if row and row['value'] == fingerprint:
             return
         db.execute("DELETE FROM catalog WHERE source = 'csv'")
-        with path.open(encoding='utf-8-sig', newline='') as file:
-            reader = csv.DictReader(file)
-            if not set(FIELDS).issubset(reader.fieldnames or ()):
-                raise ValueError('歌曲库缺少必需字段。')
-            def rows():
-                for raw in reader:
-                    song_id, name, artist, genres = [(raw[key] or '').strip() for key in FIELDS]
-                    if song_id and name:
-                        yield song_id, name, artist, genres, normalize(name), normalize(artist), 'csv'
-            db.executemany('INSERT INTO catalog VALUES (?, ?, ?, ?, ?, ?, ?)', rows())
+        for item in parts:
+            with item.open(encoding='utf-8-sig', newline='') as file:
+                reader = csv.DictReader(file)
+                if not set(FIELDS).issubset(reader.fieldnames or ()):
+                    raise ValueError('歌曲库缺少必需字段。')
+                def rows():
+                    for raw in reader:
+                        song_id, name, artist, genres = [(raw[key] or '').strip() for key in FIELDS]
+                        if song_id and name:
+                            yield song_id, name, artist, genres, normalize(name), normalize(artist), 'csv'
+                db.executemany('INSERT INTO catalog VALUES (?, ?, ?, ?, ?, ?, ?)', rows())
         db.execute("INSERT OR REPLACE INTO metadata VALUES ('catalog_csv', ?)", (fingerprint,))
 
 

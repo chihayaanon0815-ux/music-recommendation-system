@@ -1,0 +1,60 @@
+{
+  "gds_version": "2.13.12",
+  "catalog_count": 662939,
+  "seed_ids": [
+    "msd:SOABRAB12A6D4F7AAF",
+    "msd:SOCFDRD12AB0186D29"
+  ],
+  "songs": [
+    {
+      "song_id": "msd:SOAJYBD12AB018D6C5",
+      "name": "Who Are You",
+      "score": 0.010164264045440265
+    },
+    {
+      "song_id": "msd:SOBEHWR12AB018D6C6",
+      "name": "In A Day",
+      "score": 0.010164264045440265
+    },
+    {
+      "song_id": "msd:SODIXWS12AB01873F5",
+      "name": "Return To Zero",
+      "score": 0.010164264045440265
+    },
+    {
+      "song_id": "msd:SOEZMMR12AB018D6DF",
+      "name": "/ Song",
+      "score": 0.010164264045440265
+    },
+    {
+      "song_id": "msd:SOJUVPR12AB0186D28",
+      "name": "Assassin",
+      "score": 0.010164264045440265
+    },
+    {
+      "song_id": "msd:SOKQEVE12AF72A2BA9",
+      "name": "Dove",
+      "score": 0.010164264045440265
+    },
+    {
+      "song_id": "msd:SOKRHWQ12AB018D6BE",
+      "name": "Namaste",
+      "score": 0.010164264045440265
+    },
+    {
+      "song_id": "msd:SOLAIGT12AB018D6BF",
+      "name": "Floyd",
+      "score": 0.010164264045440265
+    },
+    {
+      "song_id": "msd:SORARHY12AB0186D17",
+      "name": "Ein",
+      "score": 0.010164264045440265
+    },
+    {
+      "song_id": "msd:SORHNDO12AB0186D26",
+      "name": "Night Full Of Kicks",
+      "score": 0.010164264045440265
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "requested": 100,
+  "matched_recording": 66,
+  "with_tags": 14,
+  "with_genres": 14,
+  "fetched": 49,
+  "from_cache": 51,
+  "elapsed_seconds": 359.3,
+  "sample": [
+    {
+      "song_id": "SOBONKR12A58A7A7E0",
+      "title": "You're The One",
+      "artist": "Dwight Yoakam",
+      "mb_recording_id": "51fb73f1-c2d8-40bb-9eb1-649f969e8597",
+      "tags": [
+        "alternative country",
+        "classic country",
+        "country",
+        "country folk",
+        "honky tonk",
+        "neo-traditional country"
+      ],
+      "genres": [
+        "alternative country",
+        "classic country",
+        "country",
+        "country folk",
+        "honky tonk",
+        "neo-traditional country"
+      ]
+    },
+    {
+      "song_id": "SOAUWYT12A81C206F1",
+      "title": "Undo",
+      "artist": "Björk",
+      "mb_recording_id": "6e3e2bec-8207-41df-afcb-3fade7955984",
+      "tags": [],
+      "genres": []
+    },
+    {
+      "song_id": "SOSXLTC12AF72A7F54",
+      "title": "Revelry",
+      "artist": "Kings Of Leon",
+      "mb_recording_id": "e507fc58-a5ad-4f8c-bb6c-7b783768616a",
+      "tags": [
+        "alternative",
+        "alternative and punk",
+        "alternative punk",
+        "alternative rock",
+        "américain",
+        "garage rock revival",
+        "indie",
+        "indie rock",
+        "pop rock",
+        "punk",
+        "rock",
+        "southern rock"
+      ],
+      "genres": [
+        "alternative punk",
+        "alternative rock",
+        "garage rock revival",
+        "indie rock",
+        "pop rock",
+        "punk",
+        "rock",
+        "southern rock"
+      ]
+    },
+    {
+      "song_id": "SOFRQTD12A81C233C0",
+      "title": "Sehr kosmisch",
+      "artist": "Harmonia",
+      "mb_recording_id": "91c3fb1f-dcfc-475d-af56-1a201e3b011a",
+      "tags": [
+        "ambient",
+        "electronic",
+        "electrorock",
+        "krautrock",
+        "rock"
+      ],
+      "genres": [
+        "ambient",
+        "electronic",
+        "krautrock",
+        "rock"
+      ]
+    },
+    {
+      "song_id": "SOEGIYH12A6D4FC0E3",
+      "title": "Horn Concerto No. 4 in E flat K495: II. Romance (Andante cantabile)",
+      "artist": "Barry Tuckwell/Academy of St Martin-in-the-Fields/Sir Neville Marriner",
+      "mb_recording_id": "",
+      "tags": [],
+      "genres": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "platform": "Windows x64",
+  "sha256": "a64887d4a5f8bff98d1831463a46f6bbb529c137ebc9332837ce4d4fe024f3fe",
+  "bytes": 15165758,
+  "parts": [
+    {
+      "file": "part-001.bin",
+      "sha256": "882fba53a6eca99d83d5098b73946385ac5cc68b785b6ac13331af6205443cd3",
+      "bytes": 5500000
+    },
+    {
+      "file": "part-002.bin",
+      "sha256": "83c47735ebdbc256e56533ac262814dc850e5fb27829cc6625604e5a18470695",
+      "bytes": 5500000
+    },
+    {
+      "file": "part-003.bin",
+      "sha256": "aa3bba2f8a57f319133a8110aee17460640357a3d09209330de4d8331738ac14",
+      "bytes": 4165758
+    }
+  ]
+}

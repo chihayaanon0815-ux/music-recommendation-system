@@ -1,0 +1,9 @@
+{
+  "catalog_tracks": 662939,
+  "graph_recommendations": 10,
+  "source_sha256": "d81cbdba47d18a2329b9f6a6e40602e41ad2ebb0f6f652ef1eecc739e63cd61d",
+  "index_sha256": "06c12a3b3b9528c60d887618d8f340d0628b8a4623f359cf80dc29c010f537d4",
+  "windows_launcher": "verified in a fresh Chinese-path directory from the published payload and catalog shards",
+  "seed_track": "Abraha",
+  "windows_headless_automation_cleanup": "Timed out after all functional checks passed. Interactive exit was not measured."
+}

@@ -1,0 +1,30 @@
+{
+  "rows": 48373586,
+  "users": 1019318,
+  "songs": 384546,
+  "total_plays": 138680243,
+  "top5_songs": [
+    [
+      "SOBONKR12A58A7A7E0",
+      726885
+    ],
+    [
+      "SOAUWYT12A81C206F1",
+      648239
+    ],
+    [
+      "SOSXLTC12AF72A7F54",
+      527893
+    ],
+    [
+      "SOFRQTD12A81C233C0",
+      425463
+    ],
+    [
+      "SOEGIYH12A6D4FC0E3",
+      389880
+    ]
+  ],
+  "elapsed_seconds": 41.4,
+  "chunk_rows": 5000000
+}

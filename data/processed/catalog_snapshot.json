@@ -1,0 +1,144 @@
+{
+  "version": "2026-11-25-behavior-catalog-name-repair",
+  "tracks": 662939,
+  "last_addition": 0,
+  "previous_release_commit": "1c267143f322c173fa2c11fc2e94b3a97b0772ad",
+  "files": [
+    {
+      "path": "data/processed/catalog-parts/part-001.csv",
+      "sha256": "3c8bda4884d793d900f989b3871a1b00e153507373629c23bbbee8a41cde9957"
+    },
+    {
+      "path": "data/processed/catalog-parts/part-002.csv",
+      "sha256": "22d797616cc2845fcb5f16e503c5d74018ff3ef5d39d170c234542cf5445a08b"
+    },
+    {
+      "path": "data/processed/catalog-parts/part-003.csv",
+      "sha256": "1961fc0d8e7662a73de20ff2c49e2148913c7240d54fa15f01d056ad94406930"
+    },
+    {
+      "path": "data/processed/catalog-parts/part-004.csv",
+      "sha256": "4a7cd3534b8868e41f6eb48ff1f47cb37228d511ead293cc7030570ad5c73d99"
+    },
+    {
+      "path": "data/processed/catalog-parts/part-005.csv",
+      "sha256": "6bfe255bac3faa26db6ac30d82433a6b7de9cc4230b38a10bcf7c3620fddef62"
+    },
+    {
+      "path": "data/processed/catalog-parts/part-006.csv",
+      "sha256": "90c43a4faaf2823597655d89668f64aa8cea0624838f5791c9405cec7563b1b7"
+    },
+    {
+      "path": "data/processed/catalog-parts/part-007.csv",
+      "sha256": "d2664a8a0f8f978f4168d8410fa3f362cac4bc5e759e619b1aea245ac635eb8a"
+    },
+    {
+      "path": "data/processed/catalog-parts/part-008.csv",
+      "sha256": "71fda85d1d2470c7544235fd3b08abff35413cc1cc9b463c3546e83f4d324276"
+    },
+    {
+      "path": "data/processed/catalog-parts/part-009.csv",
+      "sha256": "1d56c315b1dd0c1aef4ba7a35cbd4f93da664c326966d7821cad254afd27f1e9"
+    }
+  ],
+  "genre_counts": "data/processed/genre_counts.csv",
+  "artifacts": {
+    "data/processed/genre_counts.csv": {
+      "bytes": 507,
+      "sha256": "f8e550f7e06d40408cec23947f7382df80fa8edef67eadb75ca2fb81267fe3a3"
+    },
+    "data/processed/behavior/spotify_song_id_map.csv": {
+      "bytes": 6012625,
+      "sha256": "985a292f12ddaa0551afca1cf69809e16feb248acc9fae099c3c981fbb96b62f"
+    },
+    "data/processed/behavior/pending_titles.csv": {
+      "bytes": 459,
+      "sha256": "8a58ac17716432b41e74bb36d236ec8868a7d53a1dfdb9b86b729bd6d9f87e33"
+    },
+    "docs/data/catalog-behavior-2026-11-25/genre_report.json": {
+      "bytes": 2426,
+      "sha256": "143ec016a7b40a59e45656f60f350e0b48bdffc6896c3a1abadd5ef484d4309d"
+    },
+    "docs/data/catalog-behavior-2026-11-25/behavior_merge_report.json": {
+      "bytes": 1491,
+      "sha256": "ca084e8c78620291991644ec9d4cd9e016d352534d13fd0943459ac932c17483"
+    },
+    "docs/data/catalog-behavior-2026-11-25/behavior_coverage.json": {
+      "bytes": 7167,
+      "sha256": "db763a75b0d9b117212f50b4806951e27fb8bfd81294882a1cbdb35cc48bdcab"
+    },
+    "docs/data/catalog-behavior-2026-11-25/README.md": {
+      "bytes": 5786,
+      "sha256": "94f51b13e0c9c842a4d3ae9ced344b6bba5d7a5cace3cf15fa312efec58df91a"
+    },
+    "data/processed/README.md": {
+      "bytes": 549,
+      "sha256": "542a5852dfa0117fa3587ac543d5d0a2c46fb3c25192dcc0afd6caf473d52bb4"
+    },
+    "data/processed/catalog-parts/part-001.csv": {
+      "bytes": 5799956,
+      "sha256": "3c8bda4884d793d900f989b3871a1b00e153507373629c23bbbee8a41cde9957"
+    },
+    "data/processed/catalog-parts/part-002.csv": {
+      "bytes": 5799948,
+      "sha256": "22d797616cc2845fcb5f16e503c5d74018ff3ef5d39d170c234542cf5445a08b"
+    },
+    "data/processed/catalog-parts/part-003.csv": {
+      "bytes": 5799997,
+      "sha256": "1961fc0d8e7662a73de20ff2c49e2148913c7240d54fa15f01d056ad94406930"
+    },
+    "data/processed/catalog-parts/part-004.csv": {
+      "bytes": 5799959,
+      "sha256": "4a7cd3534b8868e41f6eb48ff1f47cb37228d511ead293cc7030570ad5c73d99"
+    },
+    "data/processed/catalog-parts/part-005.csv": {
+      "bytes": 5800372,
+      "sha256": "6bfe255bac3faa26db6ac30d82433a6b7de9cc4230b38a10bcf7c3620fddef62"
+    },
+    "data/processed/catalog-parts/part-006.csv": {
+      "bytes": 5800434,
+      "sha256": "90c43a4faaf2823597655d89668f64aa8cea0624838f5791c9405cec7563b1b7"
+    },
+    "data/processed/catalog-parts/part-007.csv": {
+      "bytes": 5800435,
+      "sha256": "d2664a8a0f8f978f4168d8410fa3f362cac4bc5e759e619b1aea245ac635eb8a"
+    },
+    "data/processed/catalog-parts/part-008.csv": {
+      "bytes": 5800322,
+      "sha256": "71fda85d1d2470c7544235fd3b08abff35413cc1cc9b463c3546e83f4d324276"
+    },
+    "data/processed/catalog-parts/part-009.csv": {
+      "bytes": 406856,
+      "sha256": "1d56c315b1dd0c1aef4ba7a35cbd4f93da664c326966d7821cad254afd27f1e9"
+    },
+    "data/processed/behavior/msd_song_id_map.csv.gz": {
+      "bytes": 5451978,
+      "sha256": "a03b9eea2680327fed09200820a8949b55e2eccab2eb433b882befb2ee09a7a7"
+    },
+    "data/processed/behavior/genre_annotations.csv.gz": {
+      "bytes": 4849443,
+      "sha256": "c45171d026d29498eca6f2c6beaef4bcbd755eb50aa2b566c3ab4f4e29d44ca7"
+    },
+    "web/app.py": {
+      "bytes": 5043,
+      "sha256": "bebc28c628295f2563dc704aa536859b4488e411aa693069f076098ab23480c2"
+    },
+    "web/catalog.py": {
+      "bytes": 6108,
+      "sha256": "30ed1479ddda367162c1c7664b20c365ac1d14653472d6691745d503f5199283"
+    },
+    "web/catalog_snapshot.py": {
+      "bytes": 2238,
+      "sha256": "2ef1a45d7af7a25d1e9c566936af87ad08238015b6056e4bc38936e3dfa02d08"
+    },
+    "docs/data/catalog-behavior-2026-11-25/name_encoding_review.json": {
+      "bytes": 1156,
+      "sha256": "c1fca967db4844a59b1abba8cfcee9a028b2ffb806a1147cbf3387a09119d204"
+    },
+    "docs/data/catalog-behavior-2026-11-25/name_encoding_repairs.csv": {
+      "bytes": 139333,
+      "sha256": "e5e84c366e7dcd0869c1d107728d0d40fce371a8caf8e2ca6b534c228fc50260"
+    }
+  },
+  "songs_sha256": "d81cbdba47d18a2329b9f6a6e40602e41ad2ebb0f6f652ef1eecc739e63cd61d"
+}

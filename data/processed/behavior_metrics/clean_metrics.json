@@ -1,0 +1,11 @@
+{
+  "kcore_user_k": 20,
+  "kcore_song_k": 50,
+  "rounds": 9,
+  "kept_users": 624984,
+  "kept_songs": 91283,
+  "kept_interactions": 39326348,
+  "kept_total_play_count": 111745239,
+  "density": 0.000689326245286108,
+  "elapsed_seconds": 343.7
+}

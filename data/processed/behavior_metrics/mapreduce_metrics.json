@@ -1,0 +1,13 @@
+{
+  "engine": "Hadoop Streaming 3.3.6 (LocalJobRunner, 单机本地模式)",
+  "input_rows": 48373586,
+  "input_file": "train_triplets.txt (3.0 GB)",
+  "songs": 384546,
+  "sum_users": 48373586,
+  "sum_plays": 138680243,
+  "elapsed_seconds": 139,
+  "split_maxsize_mb": 256,
+  "reducers": 4,
+  "java": "OpenJDK 11 (WSL Ubuntu)",
+  "note": "LocalJobRunner 单机执行，仅作 MapReduce 编程模型对比，不代表多节点集群性能；未使用 HDFS/YARN。"
+}

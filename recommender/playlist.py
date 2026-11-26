@@ -1,6 +1,8 @@
 from collections import Counter
 from heapq import nsmallest
 
+from recommender.track_content import is_recommendable_track
+
 
 def labels(text):
     return {part.strip() for part in text.split('|') if part.strip()}
@@ -18,7 +20,9 @@ def profile(items):
 
 
 def recommend_playlist(catalog, seeds, limit):
-    genres, artists = profile(seeds)
+    genres, artists = profile(
+        song for song in seeds if is_recommendable_track(song['song_name'], song['genres'], song['song_id'])
+    )
     excluded = {song['song_id'] for song in seeds}
     excluded_names = {(song['song_name'].casefold(), song['artist'].casefold()) for song in seeds}
 
@@ -30,7 +34,7 @@ def recommend_playlist(catalog, seeds, limit):
             shared = sorted(labels(song['genres']) & genres.keys())
             artist_count = artists[song['artist']]
             score = 3 * sum(genres[tag] for tag in shared) + 2 * artist_count
-            if score:
+            if score and is_recommendable_track(song['song_name'], song['genres'], song['song_id']):
                 reasons = [f'{tag}（原歌单 {genres[tag]} 首）' for tag in shared]
                 if artist_count:
                     reasons.append(f'{song["artist"]}（原歌单 {artist_count} 首）')

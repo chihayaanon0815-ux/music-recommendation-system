@@ -1,0 +1,58 @@
+{
+  "baseline_tracks": 293867,
+  "catalog_tracks": 662939,
+  "added_tracks": 369072,
+  "msd_methods": {
+    "exact_spotify_crosswalk": 3996,
+    "new_msd_track": 369068,
+    "exact_title_artist": 8862,
+    "new_msd_track_title_pending": 4,
+    "recognized_title_version": 2616
+  },
+  "spotify_methods": {
+    "source_id_or_lineage": 89740
+  },
+  "spotify_source_tracks": 89740,
+  "msd_tracks": 384546,
+  "pending_titles": 4,
+  "catalog_without_genre": 367781,
+  "behavior": {
+    "raw": {
+      "rows": 48373586,
+      "distinct_source_songs": 384546,
+      "missing_catalog_links": 0
+    },
+    "train.csv": {
+      "rows": 38701364,
+      "distinct_source_songs": 91283,
+      "missing_catalog_links": 0
+    },
+    "test.csv": {
+      "rows": 624984,
+      "distinct_source_songs": 77265,
+      "missing_catalog_links": 0
+    },
+    "wide_sample.csv": {
+      "rows": 100000,
+      "distinct_source_songs": 38437,
+      "missing_catalog_links": 0
+    }
+  },
+  "behavior_parquet": {
+    "test": {
+      "rows": 624984,
+      "distinct_source_songs": 77265,
+      "matches_csv_song_event_counts": true,
+      "parts": 8,
+      "missing_catalog_links": 0
+    },
+    "train": {
+      "rows": 38701364,
+      "distinct_source_songs": 91283,
+      "matches_csv_song_event_counts": true,
+      "parts": 18,
+      "missing_catalog_links": 0
+    }
+  },
+  "songs_sha256": "b5a3c079e678bc1cae50ca44b2d1aea561da6ff5c3579e574d71307702ff26d4"
+}

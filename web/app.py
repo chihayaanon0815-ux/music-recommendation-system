@@ -3,6 +3,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 from flask import Flask, render_template, request
+from recommender.track_content import is_recommendable_track
+from web.catalog_snapshot import catalog_paths
 from web.playlists import csrf_token, register as register_playlists
 
 ROOT = Path(sys.executable).resolve().parent if getattr(sys, 'frozen', False) else Path(__file__).resolve().parent.parent
@@ -25,6 +27,8 @@ def mock_recommend(songs, preferences, limit=10):
     genres, artists = set(preferences['genres']), set(preferences['artists'])
     out = []
     for song in songs:
+        if not is_recommendable_track(song['song_name'], song['genres'], song['song_id']):
+            continue
         matched = sorted(genres & set(x.strip() for x in song['genres'].split('|') if x.strip()))
         artist = song['artist'] in artists and bool(song['artist'])
         score = 3 * len(matched) + 2 * int(artist)
@@ -41,7 +45,8 @@ def index():
     base = ROOT / 'data' / 'processed'
     messages = []
     try:
-        songs = load_csv(base / 'songs.csv', ['song_id', 'song_name', 'artist', 'genres'])
+        songs = [s for path in catalog_paths(base / 'songs.csv')
+                 for s in load_csv(path, ['song_id', 'song_name', 'artist', 'genres'])]
         ids = [s['song_id'] for s in songs]
         if not songs or any(not s['song_id'] or not s['song_name'] for s in songs) or len(ids) != len(set(ids)):
             raise ValueError('歌曲为空、必填字段缺失或 ID 重复')
