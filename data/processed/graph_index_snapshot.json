@@ -1,0 +1,89 @@
+{
+  "index_sha256": "06c12a3b3b9528c60d887618d8f340d0628b8a4623f359cf80dc29c010f537d4",
+  "index_bytes": 149782528,
+  "source_sha256": "d81cbdba47d18a2329b9f6a6e40602e41ad2ebb0f6f652ef1eecc739e63cd61d",
+  "backend": "Neo4j GDS 2.13.12",
+  "tracks": 662939,
+  "parts": [
+    {
+      "file": "part-001.gz",
+      "sha256": "73ad92a52cf43912774d6541acc83d115fe52f716039e61b8df8c877e8540186",
+      "bytes": 3913957
+    },
+    {
+      "file": "part-002.gz",
+      "sha256": "c3dc73182cdee5b4a2ed436358cacf343fae2cf96a6bcd07100c121f95c87d8d",
+      "bytes": 3880874
+    },
+    {
+      "file": "part-003.gz",
+      "sha256": "2e84a6cd37e39457e232694d88cf1c6b8016721bcb61a367fe42995799bfe7e4",
+      "bytes": 3903883
+    },
+    {
+      "file": "part-004.gz",
+      "sha256": "f05bf26a7d4317e756354136fea9cd2df3267679249cb280dff06522efbf374f",
+      "bytes": 3367459
+    },
+    {
+      "file": "part-005.gz",
+      "sha256": "c0f90c3920c9e8f47c28928be53e487b5301216e6b89aea1078517d8a5f9d683",
+      "bytes": 3054099
+    },
+    {
+      "file": "part-006.gz",
+      "sha256": "13174702608a6aec38d3efac598b91eee8ce69d8fdc9d858ee35f6b816405734",
+      "bytes": 3052444
+    },
+    {
+      "file": "part-007.gz",
+      "sha256": "c38dbeaf406a1daf181e40eb2cf7556ef736fd7ad370f8bcaae6d8d225523dfb",
+      "bytes": 3052115
+    },
+    {
+      "file": "part-008.gz",
+      "sha256": "2e855ecaaf70cfa25250af1f8d21c77e96dd77613fcf27e4bde8466ef7a227fa",
+      "bytes": 3058217
+    },
+    {
+      "file": "part-009.gz",
+      "sha256": "7b32a5f73b9351f102ae36c165d526da81eb79433a56639c0d75da36bc46f388",
+      "bytes": 3461942
+    },
+    {
+      "file": "part-010.gz",
+      "sha256": "c785305d33eb3fc49ccc9e7872eadf4504ba2ae00616d810901c484f55b3b4af",
+      "bytes": 3576836
+    },
+    {
+      "file": "part-011.gz",
+      "sha256": "7c17f603e4e049feb299a9b82b1b8048dfbe35fe4ccc5c43ed127ab9881d2f31",
+      "bytes": 3504793
+    },
+    {
+      "file": "part-012.gz",
+      "sha256": "ef477106d8402cc6e4d6a742535d575b329db377dbef5f2aa2cf51589853bf61",
+      "bytes": 3186672
+    },
+    {
+      "file": "part-013.gz",
+      "sha256": "a05e747139da201945a19ff528bb2f16c822b27b02ccf8ee0290d375788f45a6",
+      "bytes": 3117099
+    },
+    {
+      "file": "part-014.gz",
+      "sha256": "b369dcf698c5dd6980836824cadd96fc1a110524e677c735974b20e4df9ef478",
+      "bytes": 3201282
+    },
+    {
+      "file": "part-015.gz",
+      "sha256": "4f10c14c3116aaa3648e7730ca17aa91456f4bbc9a021044f3e180c9aed17287",
+      "bytes": 5248646
+    },
+    {
+      "file": "part-016.gz",
+      "sha256": "76d5155a824fea27d1c55fc6ead4283916d824bad9d48e4c600b477a390e5799",
+      "bytes": 5135332
+    }
+  ]
+}

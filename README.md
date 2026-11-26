@@ -1,5 +1,11 @@
 # 个性化音乐推荐系统
 
+## 下载并运行
+
+Windows x64 用户可下载本分支的完整 ZIP，解压后双击 `Start-MusicRecommendation.cmd`。首次启动会核验并还原程序、曲库和推荐索引，随后打开浏览器。运行所需的 Python 已随程序打包。
+
+详细步骤见 [离线使用说明](docs/recommendation/neo4j/offline-download.md)。
+
 三人一周课程设计：离线 Windows 本地网页，PySpark 离线清洗，Flask 展示基于偏好的推荐和统计图。音频播放不在必做范围。
 
 ## 歌单功能

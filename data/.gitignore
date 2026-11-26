@@ -1,1 +1,3 @@
 raw/
+/processed/songs.csv
+/processed/graph_index.sqlite3

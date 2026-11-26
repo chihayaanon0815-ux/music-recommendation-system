@@ -9,9 +9,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", type=int, default=5076)
     args = parser.parse_args()
-    os.environ["LOCALAPPDATA"] = str(Path(__file__).resolve().parent / "test-user-data")
+    root = Path(__file__).resolve().parent
+    os.environ["LOCALAPPDATA"] = str(root / "test-user-data")
+    from web.graph_snapshot import restore_published_index
     from web.app import app
 
+    restore_published_index(root / "data/processed")
     app.run(host="127.0.0.1", port=args.port, use_reloader=False)
 
 
